@@ -14,18 +14,17 @@ import android.content.Context;
 import android.os.Environment;
 import android.os.StatFs;
 import android.util.Log;
-
 /**
- * �ļ��������߰�
- * 
+ * 文件操作工具包
+ *
  * @author liux (http://my.oschina.net/liux)
  * @version 1.0
  * @created 2012-3-21
  */
 public class FileUtils {
-    /**
-	 * д�ı��ļ� ��Androidϵͳ�У��ļ������� /data/data/PACKAGE_NAME/files Ŀ¼��
-	 * 
+	/**
+	 * 写文本文件 在Android系统中，文件保存在 /data/data/PACKAGE_NAME/files 目录下
+	 *
 	 * @param context
 	 * @param msg
 	 */
@@ -45,8 +44,8 @@ public class FileUtils {
 	}
 
 	/**
-	 * ��ȡ�ı��ļ�
-	 * 
+	 * 读取文本文件
+	 *
 	 * @param context
 	 * @param fileName
 	 * @return
@@ -87,15 +86,15 @@ public class FileUtils {
 	}
 
 	/**
-	 * ���ֻ�д�ļ�
-	 * 
+	 * 向手机写文件
+	 *
 	 * @param buffer
 	 * @param folder
 	 * @param fileName
 	 * @return
 	 */
 	public static boolean writeFile(byte[] buffer, String folder,
-			String fileName) {
+									String fileName) {
 		boolean writeSucc = false;
 		File fileDir = new File(folder.substring(0,
 				folder.lastIndexOf(File.separator)));
@@ -123,8 +122,8 @@ public class FileUtils {
 	}
 
 	/**
-	 * ����ļ����·����ȡ�ļ���
-	 * 
+	 * 根据文件绝对路径获取文件名
+	 *
 	 * @param filePath
 	 * @return
 	 */
@@ -135,8 +134,8 @@ public class FileUtils {
 	}
 
 	/**
-	 * ����ļ��ľ��·����ȡ�ļ�������չ��
-	 * 
+	 * 根据文件的绝对路径获取文件名但不包含扩展名
+	 *
 	 * @param filePath
 	 * @return
 	 */
@@ -150,8 +149,8 @@ public class FileUtils {
 	}
 
 	/**
-	 * ��ȡ�ļ���չ��
-	 * 
+	 * 获取文件扩展名
+	 *
 	 * @param fileName
 	 * @return
 	 */
@@ -164,8 +163,8 @@ public class FileUtils {
 	}
 
 	/**
-	 * ��ȡ�ļ���С
-	 * 
+	 * 获取文件大小
+	 *
 	 * @param filePath
 	 * @return
 	 */
@@ -180,10 +179,10 @@ public class FileUtils {
 	}
 
 	/**
-	 * ��ȡ�ļ���С
-	 * 
+	 * 获取文件大小
+	 *
 	 * @param size
-	 *            �ֽ�
+	 *            字节
 	 * @return
 	 */
 	public static String getFileSize(long size) {
@@ -199,8 +198,8 @@ public class FileUtils {
 	}
 
 	/**
-	 * ת���ļ���С
-	 * 
+	 * 转换文件大小
+	 *
 	 * @param fileS
 	 * @return B/KB/MB/GB
 	 */
@@ -220,8 +219,8 @@ public class FileUtils {
 	}
 
 	/**
-	 * ��ȡĿ¼�ļ���С
-	 * 
+	 * 获取目录文件大小
+	 *
 	 * @param dir
 	 * @return
 	 */
@@ -239,15 +238,15 @@ public class FileUtils {
 				dirSize += file.length();
 			} else if (file.isDirectory()) {
 				dirSize += file.length();
-				dirSize += getDirSize(file); // �ݹ���ü���ͳ��
+				dirSize += getDirSize(file); // 递归调用继续统计
 			}
 		}
 		return dirSize;
 	}
 
 	/**
-	 * ��ȡĿ¼�ļ�����
-	 * 
+	 * 获取目录文件个数
+	 *
 	 * @param f
 	 * @return
 	 */
@@ -257,7 +256,7 @@ public class FileUtils {
 		count = files.length;
 		for (File file : files) {
 			if (file.isDirectory()) {
-				count = count + getFileList(file);// �ݹ�
+				count = count + getFileList(file);// 递归
 				count--;
 			}
 		}
@@ -276,8 +275,8 @@ public class FileUtils {
 	}
 
 	/**
-	 * ����ļ��Ƿ����
-	 * 
+	 * 检查文件是否存在
+	 *
 	 * @param name
 	 * @return
 	 */
@@ -294,8 +293,8 @@ public class FileUtils {
 	}
 
 	/**
-	 * ���·���Ƿ����
-	 * 
+	 * 检查路径是否存在
+	 *
 	 * @param path
 	 * @return
 	 */
@@ -304,9 +303,9 @@ public class FileUtils {
 	}
 
 	/**
-	 * ����SD����ʣ��ռ�
-	 * 
-	 * @return ����-1��˵��û�а�װsd��
+	 * 计算SD卡的剩余空间
+	 *
+	 * @return 返回-1，说明没有安装sd卡
 	 */
 	@SuppressWarnings("deprecation")
 	public static long getFreeDiskSpace() {
@@ -329,8 +328,8 @@ public class FileUtils {
 	}
 
 	/**
-	 * �½�Ŀ¼
-	 * 
+	 * 新建目录
+	 *
 	 * @param directoryName
 	 * @return
 	 */
@@ -347,8 +346,8 @@ public class FileUtils {
 	}
 
 	/**
-	 * ����Ƿ�װSD��
-	 * 
+	 * 检查是否安装SD卡
+	 *
 	 * @return
 	 */
 	public static boolean checkSaveLocationExists() {
@@ -360,28 +359,28 @@ public class FileUtils {
 			status = false;
 		return status;
 	}
-	
+
 	/**
-	 * ����Ƿ�װ���õ�SD��
-	 * 
+	 * 检查是否安装外置的SD卡
+	 *
 	 * @return
 	 */
 	public static boolean checkExternalSDExists() {
-		
+
 		Map<String, String> evn = System.getenv();
 		return evn.containsKey("SECONDARY_STORAGE");
 	}
 
 	/**
-	 * ɾ��Ŀ¼(������Ŀ¼��������ļ�)
-	 * 
+	 * 删除目录(包括：目录里的所有文件)
+	 *
 	 * @param fileName
 	 * @return
 	 */
 	public static boolean deleteDirectory(String fileName) {
 		boolean status;
 		SecurityManager checker = new SecurityManager();
-		
+
 		if (!fileName.equals("")) {
 
 			File path = Environment.getExternalStorageDirectory();
@@ -413,8 +412,8 @@ public class FileUtils {
 	}
 
 	/**
-	 * ɾ���ļ�
-	 * 
+	 * 删除文件
+	 *
 	 * @param fileName
 	 * @return
 	 */
@@ -444,10 +443,10 @@ public class FileUtils {
 	}
 
 	/**
-	 * ɾ���Ŀ¼
-	 * 
-	 * ���� 0���ɹ� ,1 ���û��ɾ��Ȩ��, 2��?�ǿ�Ŀ¼,3 ���δ֪����
-	 * 
+	 * 删除空目录
+	 *
+	 * 返回 0代表成功 ,1 代表没有删除权限, 2代表不是空目录,3 代表未知错误
+	 *
 	 * @return
 	 */
 	public static int deleteBlankPath(String path) {
@@ -465,8 +464,8 @@ public class FileUtils {
 	}
 
 	/**
-	 * ������
-	 * 
+	 * 重命名
+	 *
 	 * @param oldName
 	 * @param newName
 	 * @return
@@ -477,8 +476,8 @@ public class FileUtils {
 	}
 
 	/**
-	 * ɾ���ļ�
-	 * 
+	 * 删除文件
+	 *
 	 * @param filePath
 	 */
 	public static boolean deleteFileWithPath(String filePath) {
@@ -492,9 +491,9 @@ public class FileUtils {
 		}
 		return false;
 	}
-	
+
 	/**
-	 * ���һ���ļ���
+	 * 清空一个文件夹
 	 * @param files
 	 */
 	public static void clearFileWithPath(String filePath) {
@@ -512,39 +511,39 @@ public class FileUtils {
 	}
 
 	/**
-	 * ��ȡSD���ĸ�Ŀ¼
-	 * 
+	 * 获取SD卡的根目录
+	 *
 	 * @return
 	 */
 	public static String getSDRoot() {
-		
+
 		return Environment.getExternalStorageDirectory().getAbsolutePath();
 	}
-	
+
 	/**
-	 * ��ȡ�ֻ�����SD���ĸ�Ŀ¼
-	 * 
+	 * 获取手机外置SD卡的根目录
+	 *
 	 * @return
 	 */
 	public static String getExternalSDRoot() {
-		
+
 		Map<String, String> evn = System.getenv();
-		
+
 		return evn.get("SECONDARY_STORAGE");
 	}
 
 	/**
-	 * �г�rootĿ¼��������Ŀ¼
-	 * 
+	 * 列出root目录下所有子目录
+	 *
 	 * @param path
-	 * @return ���·��
+	 * @return 绝对路径
 	 */
 	public static List<String> listPath(String root) {
 		List<String> allDir = new ArrayList<String>();
 		SecurityManager checker = new SecurityManager();
 		File path = new File(root);
 		checker.checkRead(root);
-		// ���˵���.��ʼ���ļ���
+		// 过滤掉以.开始的文件夹
 		if (path.isDirectory()) {
 			for (File f : path.listFiles()) {
 				if (f.isDirectory() && !f.getName().startsWith(".")) {
@@ -554,9 +553,9 @@ public class FileUtils {
 		}
 		return allDir;
 	}
-	
+
 	/**
-	 * ��ȡһ���ļ����µ������ļ�
+	 * 获取一个文件夹下的所有文件
 	 * @param root
 	 * @return
 	 */
@@ -569,7 +568,7 @@ public class FileUtils {
 		for (File f : files) {
 			if (f.isFile())
 				allDir.add(f);
-			else 
+			else
 				listPath(f.getAbsolutePath());
 		}
 		return allDir;
@@ -580,8 +579,8 @@ public class FileUtils {
 	}
 
 	/**
-	 * ����Ŀ¼
-	 * 
+	 * 创建目录
+	 *
 	 * @param path
 	 */
 	public static PathStatus createPath(String newPath) {
@@ -597,8 +596,8 @@ public class FileUtils {
 	}
 
 	/**
-	 * ��ȡ·����
-	 * 
+	 * 截取路径名
+	 *
 	 * @return
 	 */
 	public static String getPathName(String absolutePath) {
@@ -606,9 +605,9 @@ public class FileUtils {
 		int end = absolutePath.length();
 		return absolutePath.substring(start, end);
 	}
-	
+
 	/**
-	 * ��ȡӦ�ó��򻺴��ļ����µ�ָ��Ŀ¼
+	 * 获取应用程序缓存文件夹下的指定目录
 	 * @param context
 	 * @param dir
 	 * @return

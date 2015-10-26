@@ -50,15 +50,14 @@ import android.graphics.Canvas;
 import android.graphics.PixelFormat;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-
 /**
- * @author Michael Yang��www.yangfuhai.com�� update at 2013.08.07
+ * @author Michael Yang（www.yangfuhai.com） update at 2013.08.07
  */
 public class ACache {
 	public static final int TIME_HOUR = 60 * 60;
 	public static final int TIME_DAY = TIME_HOUR * 24;
 	private static final int MAX_SIZE = 1000 * 1000 * 50; // 50 mb
-	private static final int MAX_COUNT = Integer.MAX_VALUE; // �����ƴ����ݵ�����
+	private static final int MAX_COUNT = Integer.MAX_VALUE; // 不限制存放数据的数量
 	private static Map<String, ACache> mInstanceMap = new HashMap<String, ACache>();
 	private ACacheManager mCache;
 
@@ -104,7 +103,7 @@ public class ACache {
 	 * Provides a means to save a cached file before the data are available.
 	 * Since writing about the file is complete, and its close method is called,
 	 * its contents will be registered in the cache. Example of use:
-	 * 
+	 *
 	 * ACache cache = new ACache(this) try { OutputStream stream =
 	 * cache.put("myFileName") stream.write("some bytes".getBytes()); // now
 	 * update cache! stream.close(); } catch(FileNotFoundException e){
@@ -125,15 +124,15 @@ public class ACache {
 	}
 
 	// =======================================
-	// ============ String��� ��д ==============
+	// ============ String数据 读写 ==============
 	// =======================================
 	/**
-	 * ���� String��� �� ������
-	 * 
+	 * 保存 String数据 到 缓存中
+	 *
 	 * @param key
-	 *            �����key
+	 *            保存的key
 	 * @param value
-	 *            �����String���
+	 *            保存的String数据
 	 */
 	public void put(String key, String value) {
 		File file = mCache.newFile(key);
@@ -157,24 +156,24 @@ public class ACache {
 	}
 
 	/**
-	 * ���� String��� �� ������
-	 * 
+	 * 保存 String数据 到 缓存中
+	 *
 	 * @param key
-	 *            �����key
+	 *            保存的key
 	 * @param value
-	 *            �����String���
+	 *            保存的String数据
 	 * @param saveTime
-	 *            �����ʱ�䣬��λ����
+	 *            保存的时间，单位：秒
 	 */
 	public void put(String key, String value, int saveTime) {
 		put(key, Utils.newStringWithDateInfo(saveTime, value));
 	}
 
 	/**
-	 * ��ȡ String���
-	 * 
+	 * 读取 String数据
+	 *
 	 * @param key
-	 * @return String ���
+	 * @return String 数据
 	 */
 	public String getAsString(String key) {
 		File file = mCache.get(key);
@@ -212,39 +211,39 @@ public class ACache {
 	}
 
 	// =======================================
-	// ============= JSONObject ��� ��д ==============
+	// ============= JSONObject 数据 读写 ==============
 	// =======================================
 	/**
-	 * ���� JSONObject��� �� ������
-	 * 
+	 * 保存 JSONObject数据 到 缓存中
+	 *
 	 * @param key
-	 *            �����key
+	 *            保存的key
 	 * @param value
-	 *            �����JSON���
+	 *            保存的JSON数据
 	 */
 	public void put(String key, JSONObject value) {
 		put(key, value.toString());
 	}
 
 	/**
-	 * ���� JSONObject��� �� ������
-	 * 
+	 * 保存 JSONObject数据 到 缓存中
+	 *
 	 * @param key
-	 *            �����key
+	 *            保存的key
 	 * @param value
-	 *            �����JSONObject���
+	 *            保存的JSONObject数据
 	 * @param saveTime
-	 *            �����ʱ�䣬��λ����
+	 *            保存的时间，单位：秒
 	 */
 	public void put(String key, JSONObject value, int saveTime) {
 		put(key, value.toString(), saveTime);
 	}
 
 	/**
-	 * ��ȡJSONObject���
-	 * 
+	 * 读取JSONObject数据
+	 *
 	 * @param key
-	 * @return JSONObject���
+	 * @return JSONObject数据
 	 */
 	public JSONObject getAsJSONObject(String key) {
 		String JSONString = getAsString(key);
@@ -258,39 +257,39 @@ public class ACache {
 	}
 
 	// =======================================
-	// ============ JSONArray ��� ��д =============
+	// ============ JSONArray 数据 读写 =============
 	// =======================================
 	/**
-	 * ���� JSONArray��� �� ������
-	 * 
+	 * 保存 JSONArray数据 到 缓存中
+	 *
 	 * @param key
-	 *            �����key
+	 *            保存的key
 	 * @param value
-	 *            �����JSONArray���
+	 *            保存的JSONArray数据
 	 */
 	public void put(String key, JSONArray value) {
 		put(key, value.toString());
 	}
 
 	/**
-	 * ���� JSONArray��� �� ������
-	 * 
+	 * 保存 JSONArray数据 到 缓存中
+	 *
 	 * @param key
-	 *            �����key
+	 *            保存的key
 	 * @param value
-	 *            �����JSONArray���
+	 *            保存的JSONArray数据
 	 * @param saveTime
-	 *            �����ʱ�䣬��λ����
+	 *            保存的时间，单位：秒
 	 */
 	public void put(String key, JSONArray value, int saveTime) {
 		put(key, value.toString(), saveTime);
 	}
 
 	/**
-	 * ��ȡJSONArray���
-	 * 
+	 * 读取JSONArray数据
+	 *
 	 * @param key
-	 * @return JSONArray���
+	 * @return JSONArray数据
 	 */
 	public JSONArray getAsJSONArray(String key) {
 		String JSONString = getAsString(key);
@@ -304,15 +303,15 @@ public class ACache {
 	}
 
 	// =======================================
-	// ============== byte ��� ��д =============
+	// ============== byte 数据 读写 =============
 	// =======================================
 	/**
-	 * ���� byte��� �� ������
-	 * 
+	 * 保存 byte数据 到 缓存中
+	 *
 	 * @param key
-	 *            �����key
+	 *            保存的key
 	 * @param value
-	 *            ��������
+	 *            保存的数据
 	 */
 	public void put(String key, byte[] value) {
 		File file = mCache.newFile(key);
@@ -337,7 +336,7 @@ public class ACache {
 
 	/**
 	 * Cache for a stream
-	 * 
+	 *
 	 * @param key
 	 *            the file name.
 	 * @return OutputStream stream for writing data.
@@ -349,7 +348,7 @@ public class ACache {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param key
 	 *            the file name.
 	 * @return (InputStream or null) stream previously saved in cache.
@@ -364,24 +363,24 @@ public class ACache {
 	}
 
 	/**
-	 * ���� byte��� �� ������
-	 * 
+	 * 保存 byte数据 到 缓存中
+	 *
 	 * @param key
-	 *            �����key
+	 *            保存的key
 	 * @param value
-	 *            ��������
+	 *            保存的数据
 	 * @param saveTime
-	 *            �����ʱ�䣬��λ����
+	 *            保存的时间，单位：秒
 	 */
 	public void put(String key, byte[] value, int saveTime) {
 		put(key, Utils.newByteArrayWithDateInfo(saveTime, value));
 	}
 
 	/**
-	 * ��ȡ byte ���
-	 * 
+	 * 获取 byte 数据
+	 *
 	 * @param key
-	 * @return byte ���
+	 * @return byte 数据
 	 */
 	public byte[] getAsBinary(String key) {
 		RandomAccessFile RAFile = null;
@@ -416,29 +415,29 @@ public class ACache {
 	}
 
 	// =======================================
-	// ============= ���л� ��� ��д ===============
+	// ============= 序列化 数据 读写 ===============
 	// =======================================
 	/**
-	 * ���� Serializable��� �� ������
-	 * 
+	 * 保存 Serializable数据 到 缓存中
+	 *
 	 * @param key
-	 *            �����key
+	 *            保存的key
 	 * @param value
-	 *            �����value
+	 *            保存的value
 	 */
 	public void put(String key, Serializable value) {
 		put(key, value, -1);
 	}
 
 	/**
-	 * ���� Serializable��ݵ� ������
-	 * 
+	 * 保存 Serializable数据到 缓存中
+	 *
 	 * @param key
-	 *            �����key
+	 *            保存的key
 	 * @param value
-	 *            �����value
+	 *            保存的value
 	 * @param saveTime
-	 *            �����ʱ�䣬��λ����
+	 *            保存的时间，单位：秒
 	 */
 	public void put(String key, Serializable value, int saveTime) {
 		ByteArrayOutputStream baos = null;
@@ -464,10 +463,10 @@ public class ACache {
 	}
 
 	/**
-	 * ��ȡ Serializable���
-	 * 
+	 * 读取 Serializable数据
+	 *
 	 * @param key
-	 * @return Serializable ���
+	 * @return Serializable 数据
 	 */
 	public Object getAsObject(String key) {
 		byte[] data = getAsBinary(key);
@@ -502,39 +501,39 @@ public class ACache {
 	}
 
 	// =======================================
-	// ============== bitmap ��� ��д =============
+	// ============== bitmap 数据 读写 =============
 	// =======================================
 	/**
-	 * ���� bitmap �� ������
-	 * 
+	 * 保存 bitmap 到 缓存中
+	 *
 	 * @param key
-	 *            �����key
+	 *            保存的key
 	 * @param value
-	 *            �����bitmap���
+	 *            保存的bitmap数据
 	 */
 	public void put(String key, Bitmap value) {
 		put(key, Utils.Bitmap2Bytes(value));
 	}
 
 	/**
-	 * ���� bitmap �� ������
-	 * 
+	 * 保存 bitmap 到 缓存中
+	 *
 	 * @param key
-	 *            �����key
+	 *            保存的key
 	 * @param value
-	 *            ����� bitmap ���
+	 *            保存的 bitmap 数据
 	 * @param saveTime
-	 *            �����ʱ�䣬��λ����
+	 *            保存的时间，单位：秒
 	 */
 	public void put(String key, Bitmap value, int saveTime) {
 		put(key, Utils.Bitmap2Bytes(value), saveTime);
 	}
 
 	/**
-	 * ��ȡ bitmap ���
-	 * 
+	 * 读取 bitmap 数据
+	 *
 	 * @param key
-	 * @return bitmap ���
+	 * @return bitmap 数据
 	 */
 	public Bitmap getAsBitmap(String key) {
 		if (getAsBinary(key) == null) {
@@ -544,39 +543,39 @@ public class ACache {
 	}
 
 	// =======================================
-	// ============= drawable ��� ��д =============
+	// ============= drawable 数据 读写 =============
 	// =======================================
 	/**
-	 * ���� drawable �� ������
-	 * 
+	 * 保存 drawable 到 缓存中
+	 *
 	 * @param key
-	 *            �����key
+	 *            保存的key
 	 * @param value
-	 *            �����drawable���
+	 *            保存的drawable数据
 	 */
 	public void put(String key, Drawable value) {
 		put(key, Utils.drawable2Bitmap(value));
 	}
 
 	/**
-	 * ���� drawable �� ������
-	 * 
+	 * 保存 drawable 到 缓存中
+	 *
 	 * @param key
-	 *            �����key
+	 *            保存的key
 	 * @param value
-	 *            ����� drawable ���
+	 *            保存的 drawable 数据
 	 * @param saveTime
-	 *            �����ʱ�䣬��λ����
+	 *            保存的时间，单位：秒
 	 */
 	public void put(String key, Drawable value, int saveTime) {
 		put(key, Utils.drawable2Bitmap(value), saveTime);
 	}
 
 	/**
-	 * ��ȡ Drawable ���
-	 * 
+	 * 读取 Drawable 数据
+	 *
 	 * @param key
-	 * @return Drawable ���
+	 * @return Drawable 数据
 	 */
 	public Drawable getAsDrawable(String key) {
 		if (getAsBinary(key) == null) {
@@ -586,10 +585,10 @@ public class ACache {
 	}
 
 	/**
-	 * ��ȡ�����ļ�
-	 * 
+	 * 获取缓存文件
+	 *
 	 * @param key
-	 * @return value ������ļ�
+	 * @return value 缓存的文件
 	 */
 	public File file(String key) {
 		File f = mCache.newFile(key);
@@ -599,25 +598,25 @@ public class ACache {
 	}
 
 	/**
-	 * �Ƴ�ĳ��key
-	 * 
+	 * 移除某个key
+	 *
 	 * @param key
-	 * @return �Ƿ��Ƴ�ɹ�
+	 * @return 是否移除成功
 	 */
 	public boolean remove(String key) {
 		return mCache.remove(key);
 	}
 
 	/**
-	 * ����������
+	 * 清除所有数据
 	 */
 	public void clear() {
 		mCache.clear();
 	}
 
 	/**
-	 * @title ���������
-	 * @author �����michael�� www.yangfuhai.com
+	 * @title 缓存管理器
+	 * @author 杨福海（michael） www.yangfuhai.com
 	 * @version 1.0
 	 */
 	public class ACacheManager {
@@ -638,7 +637,7 @@ public class ACache {
 		}
 
 		/**
-		 * ���� cacheSize��cacheCount
+		 * 计算 cacheSize和cacheCount
 		 */
 		private void calculateCacheSizeAndCacheCount() {
 			new Thread(new Runnable() {
@@ -713,8 +712,8 @@ public class ACache {
 		}
 
 		/**
-		 * �Ƴ�ɵ��ļ�
-		 * 
+		 * 移除旧的文件
+		 *
 		 * @return
 		 */
 		private long removeNext() {
@@ -753,27 +752,27 @@ public class ACache {
 	}
 
 	/**
-	 * @title ʱ����㹤����
-	 * @author �����michael�� www.yangfuhai.com
+	 * @title 时间计算工具类
+	 * @author 杨福海（michael） www.yangfuhai.com
 	 * @version 1.0
 	 */
 	private static class Utils {
 
 		/**
-		 * �жϻ����String����Ƿ���
-		 * 
+		 * 判断缓存的String数据是否到期
+		 *
 		 * @param str
-		 * @return true�������� false����û�е���
+		 * @return true：到期了 false：还没有到期
 		 */
 		private static boolean isDue(String str) {
 			return isDue(str.getBytes());
 		}
 
 		/**
-		 * �жϻ����byte����Ƿ���
-		 * 
+		 * 判断缓存的byte数据是否到期
+		 *
 		 * @param data
-		 * @return true�������� false����û�е���
+		 * @return true：到期了 false：还没有到期
 		 */
 		private static boolean isDue(byte[] data) {
 			String[] strs = getDateInfoFromDate(data);
@@ -859,7 +858,7 @@ public class ACache {
 		}
 
 		/*
-		 * Bitmap �� byte[]
+		 * Bitmap → byte[]
 		 */
 		private static byte[] Bitmap2Bytes(Bitmap bm) {
 			if (bm == null) {
@@ -871,7 +870,7 @@ public class ACache {
 		}
 
 		/*
-		 * byte[] �� Bitmap
+		 * byte[] → Bitmap
 		 */
 		private static Bitmap Bytes2Bimap(byte[] b) {
 			if (b.length == 0) {
@@ -881,29 +880,29 @@ public class ACache {
 		}
 
 		/*
-		 * Drawable �� Bitmap
+		 * Drawable → Bitmap
 		 */
 		private static Bitmap drawable2Bitmap(Drawable drawable) {
 			if (drawable == null) {
 				return null;
 			}
-			// ȡ drawable �ĳ���
+			// 取 drawable 的长宽
 			int w = drawable.getIntrinsicWidth();
 			int h = drawable.getIntrinsicHeight();
-			// ȡ drawable ����ɫ��ʽ
+			// 取 drawable 的颜色格式
 			Bitmap.Config config = drawable.getOpacity() != PixelFormat.OPAQUE ? Bitmap.Config.ARGB_8888 : Bitmap.Config.RGB_565;
-			// ������Ӧ bitmap
+			// 建立对应 bitmap
 			Bitmap bitmap = Bitmap.createBitmap(w, h, config);
-			// ������Ӧ bitmap �Ļ���
+			// 建立对应 bitmap 的画布
 			Canvas canvas = new Canvas(bitmap);
 			drawable.setBounds(0, 0, w, h);
-			// �� drawable ���ݻ���������
+			// 把 drawable 内容画到画布中
 			drawable.draw(canvas);
 			return bitmap;
 		}
 
 		/*
-		 * Bitmap �� Drawable
+		 * Bitmap → Drawable
 		 */
 		@SuppressWarnings("deprecation")
 		private static Drawable bitmap2Drawable(Bitmap bm) {

@@ -9,10 +9,9 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.regex.Pattern;
-
 /**
- * �ַ�������߰�
- * 
+ * 字符串操作工具包
+ *
  * @author liux (http://my.oschina.net/liux)
  * @version 1.0
  * @created 2012-3-21
@@ -34,10 +33,10 @@ public class StringUtils {
 			return new SimpleDateFormat("yyyy-MM-dd");
 		}
 	};
-	
+
 	/**
-	 * ���ַ�תλ��������
-	 * 
+	 * 将字符串转位日期类型
+	 *
 	 * @param sdate
 	 * @return
 	 */
@@ -48,24 +47,24 @@ public class StringUtils {
 			return null;
 		}
 	}
-	
+
 	/**
-	 * ���Ѻõķ�ʽ��ʾʱ��
-	 * 
+	 * 以友好的方式显示时间
+	 *
 	 * @param sdate
 	 * @return
 	 */
 	public static String friendly_time(String sdate) {
-		
+
 		Date time = toDate(sdate);
-		
+
 		if (time == null) {
 			return "Unknown";
 		}
 		String ftime = "";
 		Calendar cal = Calendar.getInstance();
 
-		// �ж��Ƿ���ͬһ��
+		// 判断是否是同一天
 		String curDate = dateFormater2.get().format(cal.getTime());
 		String paramDate = dateFormater2.get().format(time);
 		if (curDate.equals(paramDate)) {
@@ -73,9 +72,9 @@ public class StringUtils {
 			if (hour == 0)
 				ftime = Math.max(
 						(cal.getTimeInMillis() - time.getTime()) / 60000, 1)
-						+ "����ǰ";
+						+ "分钟前";
 			else
-				ftime = hour + "Сʱǰ";
+				ftime = hour + "小时前";
 			return ftime;
 		}
 
@@ -87,29 +86,29 @@ public class StringUtils {
 			if (hour == 0)
 				ftime = Math.max(
 						(cal.getTimeInMillis() - time.getTime()) / 60000, 1)
-						+ "����ǰ";
+						+ "分钟前";
 			else
-				ftime = hour + "Сʱǰ";
+				ftime = hour + "小时前";
 		} else if (days == 1) {
-			ftime = "����";
+			ftime = "昨天";
 		} else if (days == 2) {
-			ftime = "ǰ��";
+			ftime = "前天";
 		} else if (days > 2 && days < 31) {
-			ftime = days + "��ǰ";
+			ftime = days + "天前";
 		} else if (days >= 31 && days <= 2 * 31) {
-			ftime = "һ����ǰ";
+			ftime = "一个月前";
 		} else if (days > 2 * 31 && days <= 3 * 31) {
-			ftime = "2����ǰ";
+			ftime = "2个月前";
 		} else if (days > 3 * 31 && days <= 4 * 31) {
-			ftime = "3����ǰ";
+			ftime = "3个月前";
 		}else {
 			ftime = dateFormater2.get().format(time);
-		} 
+		}
 		return ftime;
 	}
-	
+
 	/**
-	 * ���Ѻõķ�ʽ��ʾʱ��
+	 * 以友好的方式显示时间
 	 * @param date
 	 * @return
 	 */
@@ -119,8 +118,8 @@ public class StringUtils {
 	}
 
 	/**
-	 * �жϸ��ַ�ʱ���Ƿ�Ϊ����
-	 * 
+	 * 判断给定字符串时间是否为今日
+	 *
 	 * @param sdate
 	 * @return boolean
 	 */
@@ -137,9 +136,9 @@ public class StringUtils {
 		}
 		return b;
 	}
-	
+
 	/**
-	 * ����long���͵Ľ��������
+	 * 返回long类型的今天的日期
 	 * @return
 	 */
 	public static long getToday() {
@@ -150,8 +149,8 @@ public class StringUtils {
 	}
 
 	/**
-	 * �жϸ��ַ��Ƿ�հ״��� �հ״���ָ�ɿո��Ʊ��س����з���ɵ��ַ� �������ַ�Ϊnull����ַ�����true
-	 * 
+	 * 判断给定字符串是否空白串。 空白串是指由空格、制表符、回车符、换行符组成的字符串 若输入字符串为null或空字符串，返回true
+	 *
 	 * @param input
 	 * @return boolean
 	 */
@@ -169,8 +168,8 @@ public class StringUtils {
 	}
 
 	/**
-	 * �ж��ǲ���һ���Ϸ��ĵ����ʼ���ַ
-	 * 
+	 * 判断是不是一个合法的电子邮件地址
+	 *
 	 * @param email
 	 * @return
 	 */
@@ -181,8 +180,8 @@ public class StringUtils {
 	}
 
 	/**
-	 * �ַ�ת����
-	 * 
+	 * 字符串转整数
+	 *
 	 * @param str
 	 * @param defValue
 	 * @return
@@ -194,12 +193,12 @@ public class StringUtils {
 		}
 		return defValue;
 	}
-	
+
 	/**
-	 * ����ת����
-	 * 
+	 * 对象转整数
+	 *
 	 * @param obj
-	 * @return ת���쳣���� 0
+	 * @return 转换异常返回 0
 	 */
 	public static int toInt(Object obj) {
 		if (obj == null)
@@ -208,10 +207,10 @@ public class StringUtils {
 	}
 
 	/**
-	 * ����ת����
-	 * 
+	 * 对象转整数
+	 *
 	 * @param obj
-	 * @return ת���쳣���� 0
+	 * @return 转换异常返回 0
 	 */
 	public static long toLong(String obj) {
 		try {
@@ -222,10 +221,10 @@ public class StringUtils {
 	}
 
 	/**
-	 * �ַ�ת����ֵ
-	 * 
+	 * 字符串转布尔值
+	 *
 	 * @param b
-	 * @return ת���쳣���� false
+	 * @return 转换异常返回 false
 	 */
 	public static boolean toBool(String b) {
 		try {
@@ -234,9 +233,9 @@ public class StringUtils {
 		}
 		return false;
 	}
-	
+
 	/**
-	 * ��һ��InputStream��ת�����ַ�
+	 * 将一个InputStream流转换成字符串
 	 * @param is
 	 * @return
 	 */

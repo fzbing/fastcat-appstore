@@ -90,23 +90,17 @@ public class MainActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-//		mCache = ACache.get(this);
-//		mDoubleClickExitHelper = new DoubleClickExitHelper(this);
-//		toprl = (RelativeLayout) findViewById(R.id.toprl);
-//		animll_id = (LinearLayout) findViewById(R.id.animll_id);
-//		login_tv = (ImageView) findViewById(R.id.login_tv);
-//		user_name = (TextView) findViewById(R.id.user_name);
-		iv_main_left_head = (RoundedImageView) findViewById(R.id.iv_main_left_head);
-
+//		iv_main_left_head = (RoundedImageView) findViewById(R.id.iv_main_left_head);
 
 		createSDCardDir();
 
-		MobclickAgent.updateOnlineConfig(this);
+//		MobclickAgent.updateOnlineConfig(this);
 
+		//左上角三角形按钮
 		ActionBar ab = getActionBar();
-
 		ab.setDisplayHomeAsUpEnabled(true);
 		ab.setHomeButtonEnabled(true);
+
 		init();
 		fm = this.getSupportFragmentManager();
 		rl = (RelativeLayout) findViewById(R.id.rl);

@@ -45,15 +45,14 @@ import com.fastspider.fastcat.R;
 import com.fastspider.fastcat.cache.ACache;
 import com.fastspider.fastcat.dialog.SweetAlertDialog;
 import com.fastspider.fastcat.lib.NetWorkUtil;
-
 public class EveryDayEnglishFragment extends Fragment implements
 		OnClickListener,
 		android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener {
 	TextView tv_english, tv_china;
 	ImageView iv, iv_play;
-	private MediaPlayer mMediaPlayer = new MediaPlayer();// ������Ƶ��
+	private MediaPlayer mMediaPlayer = new MediaPlayer();// 播放音频。
 	int play_state;
-	private boolean mPlayState; // ����״̬
+	private boolean mPlayState; // 播放状态
 	String dateline;
 	String tts;
 	private ProgressBar mDisplayVoiceProgressBar;
@@ -70,18 +69,17 @@ public class EveryDayEnglishFragment extends Fragment implements
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setHasOptionsMenu(true);// Ϊ����Fragment����ʾ���Ͻǵ�menu
-
+		setHasOptionsMenu(true);// 为了在Fragment中显示右上角的menu
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
+							 Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_everydayenglish,
 				container, false);
 		initView(view);
-		
-		
+
+
 		return view;
 	}
 
@@ -102,7 +100,7 @@ public class EveryDayEnglishFragment extends Fragment implements
 		// findViewById(R.id.numbercircleprogress_bar);
 		swipe = (SwipeRefreshLayout) view.findViewById(R.id.swipe);
 		swipe.setOnRefreshListener(this);
-		// ����ˢ�µ���ʽ
+		// 顶部刷新的样式
 		swipe.setColorSchemeResources(android.R.color.holo_red_light,
 				android.R.color.holo_green_light,
 				android.R.color.holo_blue_bright,
@@ -160,7 +158,7 @@ public class EveryDayEnglishFragment extends Fragment implements
 							mCache.put("content", content);//
 							tv_english.setText(content);
 							String note = result.get("note").getAsString();
-							mCache.put("note", note);//
+							mCache.put("note", note);
 							tv_china.setText(note);
 							String picture2 = result.get("picture2")
 									.getAsString();
@@ -190,7 +188,7 @@ public class EveryDayEnglishFragment extends Fragment implements
 	private void aa() {
 		if (!NetWorkUtil.networkCanUse(getActivity())) {
 			new SweetAlertDialog(getActivity(), SweetAlertDialog.ERROR_TYPE)
-					.setTitleText("��������ʧ��...").setContentText("����������������Ƿ���")
+					.setTitleText("网络连接失败...").setContentText("请检查您的网络连接是否正常")
 					.show();
 			return;
 		}
@@ -202,8 +200,8 @@ public class EveryDayEnglishFragment extends Fragment implements
 			}
 			@SuppressWarnings({ "rawtypes", "unused" })
 			HttpHandler handler = http.download(tts, "/sdcard/zhidu/" + strDate
-					+ ".mp3", true, // ���Ŀ���ļ����ڣ�����δ��ɵĲ��ּ������ء���������֧��RANGEʱ���������ء�
-					false, // �������󷵻���Ϣ�л�ȡ���ļ���������ɺ��Զ�������
+							+ ".mp3", true, // 如果目标文件存在，接着未完成的部分继续下载。服务器不支持RANGE时将从新下载。
+					false, // 如果从请求返回信息中获取到文件名，下载完成后自动重命名。
 					new RequestCallBack<File>() {
 
 						@Override
@@ -213,18 +211,17 @@ public class EveryDayEnglishFragment extends Fragment implements
 
 						@Override
 						public void onLoading(long total, long current,
-								boolean isUploading) {
+											  boolean isUploading) {
 							Log.e("onLoading", total + "=|=" + current);
 							// pb.setMax((int)total);
 							// pb.setProgress((int)current);
-							Log.e("(int)current------------>", (int) current
-									+ "");
+							Log.e("(int)current------------>", (int) current + "");
 						}
 
 						@Override
 						public void onSuccess(ResponseInfo<File> responseInfo) {
 							Log.e("onSuccess", responseInfo.toString());
-							Toast.makeText(getActivity(), "���ڻ�ȡ���緢��..", 1).show();
+							Toast.makeText(getActivity(), "正在获取网络发音..", 1).show();
 
 							play();
 						}
@@ -249,8 +246,8 @@ public class EveryDayEnglishFragment extends Fragment implements
 	}
 
 	/**
-	 * ����ת�� mm��ss��ʽ����
-	 * 
+	 * 毫秒转换 mm：ss格式方法
+	 *
 	 * @param max
 	 * @return
 	 */
@@ -276,21 +273,21 @@ public class EveryDayEnglishFragment extends Fragment implements
 	@SuppressLint("SdCardPath")
 	private void play() {
 		Log.e("dateline:", "" + dateline);
-		// ����¼��
+		// 播放录音
 		if (!mPlayState) {
 			mMediaPlayer = new MediaPlayer();
 			try {
-				// ���¼����·��
+				// 添加录音的路径
 				mMediaPlayer.setDataSource("/sdcard/zhidu/" + strDate + ".mp3");
 
-				// ׼��
+				// 准备
 				mMediaPlayer.prepare();
-				// ����
+				// 播放
 				mMediaPlayer.start();
 				voice_display_voice_time
 						.setText(converLongTimeToStr(mMediaPlayer.getDuration())
-								+ "��");
-				// ���ʱ���޸Ľ���
+								+ "″");
+				// 根据时间修改界面
 				new Thread(new Runnable() {
 
 					public void run() {
@@ -304,22 +301,22 @@ public class EveryDayEnglishFragment extends Fragment implements
 						}
 					}
 				}).start();
-				// �޸Ĳ���״̬
+				// 修改播放状态
 				mPlayState = true;
-				// �޸Ĳ���ͼ��
+				// 修改播放图标
 				// mDisplayVoicePlay
 				// .setImageResource(R.drawable.globle_player_btn_stop);
 
 				iv_play.setImageResource(R.drawable.globle_player_btn_stop);
 				mMediaPlayer
 						.setOnCompletionListener(new OnCompletionListener() {
-							// ���Ž�������
+							// 播放结束后调用
 							public void onCompletion(MediaPlayer mp) {
-								// ֹͣ����
+								// 停止播放
 								mMediaPlayer.stop();
-								// �޸Ĳ���״̬
+								// 修改播放状态
 								mPlayState = false;
-								// �޸Ĳ���ͼ��
+								// 修改播放图标
 								iv_play.setImageResource(R.drawable.globle_player_btn_play);
 								mDisplayVoiceProgressBar.setProgress(0);
 
@@ -335,7 +332,7 @@ public class EveryDayEnglishFragment extends Fragment implements
 			}
 		} else {
 			if (mMediaPlayer != null) {
-				// ��ݲ���״̬�޸���ʾ����
+				// 根据播放状态修改显示内容
 				if (mMediaPlayer.isPlaying()) {
 					mPlayState = false;
 					mMediaPlayer.stop();
@@ -364,16 +361,16 @@ public class EveryDayEnglishFragment extends Fragment implements
 		// TODO Auto-generated method stub
 
 		switch (arg0.getId()) {
-		case R.id.voice_display_voice_layout:
-			File file = new File("/sdcard/zhidu/" + strDate + ".mp3");
-			if (file.exists()) {
-				play();
-			} else {
-				aa();
-			}
-			break;
-		default:
-			break;
+			case R.id.voice_display_voice_layout:
+				File file = new File("/sdcard/zhidu/" + strDate + ".mp3");
+				if (file.exists()) {
+					play();
+				} else {
+					aa();
+				}
+				break;
+			default:
+				break;
 		}
 	}
 
@@ -383,7 +380,7 @@ public class EveryDayEnglishFragment extends Fragment implements
 
 			return true;
 		} else {
-			
+
 			Calendar cal = Calendar.getInstance();
 			year = cal.get(Calendar.YEAR);
 			month = cal.get(Calendar.MONTH);
@@ -404,27 +401,27 @@ public class EveryDayEnglishFragment extends Fragment implements
 
 	private DatePickerDialog.OnDateSetListener Datelistener = new DatePickerDialog.OnDateSetListener() {
 		/**
-		 * params��view�����¼���������� params��myyear����ǰѡ����� params��monthOfYear����ǰѡ�����
-		 * params��dayOfMonth����ǰѡ�����
+		 * params：view：该事件关联的组件 params：myyear：当前选择的年 params：monthOfYear：当前选择的月
+		 * params：dayOfMonth：当前选择的日
 		 */
 		@Override
 		public void onDateSet(DatePicker view, int myyear, int monthOfYear,
-				int dayOfMonth) {
+							  int dayOfMonth) {
 
-			// �޸�year��month��day�ı���ֵ���Ա��Ժ󵥻���ťʱ��DatePickerDialog����ʾ��һ���޸ĺ��ֵ
+			// 修改year、month、day的变量值，以便以后单击按钮时，DatePickerDialog上显示上一次修改后的值
 			year = myyear;
 			month = monthOfYear;
 			day = dayOfMonth;
-			// ��������
+			// 更新日期
 			updateDate();
 
 		}
 
-		// ��DatePickerDialog�ر�ʱ������������ʾ
+		// 当DatePickerDialog关闭时，更新日期显示
 		private void updateDate() {
-			// ��TextView����ʾ����
+			// 在TextView上显示日期
 			int mm = month + 1;
-			// showdate.setText("��ǰ���ڣ�"+year+"-"+(month+1)+"-"+day);
+			// showdate.setText("当前日期："+year+"-"+(month+1)+"-"+day);
 			strDate = year + "-" + mm + "-" + day;
 			Calendar cal = Calendar.getInstance();
 			int y = cal.get(Calendar.YEAR);
@@ -432,8 +429,8 @@ public class EveryDayEnglishFragment extends Fragment implements
 			int d = cal.get(Calendar.DAY_OF_MONTH);
 			String nowTime = y+"-"+m+"-"+d;
 			if (year > y||year<=2013){
-				new SweetAlertDialog(getActivity()).setTitleText("��ѯ��Χ:2014-1-1��"+nowTime)
-				.show();
+				new SweetAlertDialog(getActivity()).setTitleText("查询范围:2014-1-1至"+nowTime)
+						.show();
 				return;
 			}
 
@@ -460,7 +457,7 @@ public class EveryDayEnglishFragment extends Fragment implements
 
 
 				} else {
-					Toast.makeText(getActivity(), "��������ʧ��..", 1).show();
+					Toast.makeText(getActivity(), "网络连接失败..", 1).show();
 
 				}
 

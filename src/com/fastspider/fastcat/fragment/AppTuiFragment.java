@@ -18,17 +18,16 @@ import android.widget.ListView;
 
 import com.fastspider.fastcat.R;
 import com.fastspider.fastcat.adapter.TuiAdapter;
-
 public class AppTuiFragment extends Fragment {
 	ListView lv;
 	TuiAdapter adapter;
 	String[] items = {
-			"�����������������ǴҴ�ææ������������Ʒζ�������⣬����������һ�����ʶ���Ƶ�ۺ�App����Щ��Ƶ���������ʹ��..",
-			"һ�����Լ�����򵥵���������app������Ҳ��Ҫ��ּ��ˣ��һ���żǵ��Ҽ���˲�������¾ͷ����ˣ�Ϊʲô��.." };
+			"公交，地铁，人们总是匆匆忙忙，静下心来，品味最美创意，最美创意是一款优质短视频聚合App，这些视频可能是优质广告..",
+			"一款超级简约但不简单的语音记账app，曾经我也想要坚持记账，我还大概记得我坚持了不到半个月就放弃了！为什么？.." };
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
+							 Bundle savedInstanceState) {
 		View view = inflater
 				.inflate(R.layout.fragment_apptui, container, false);
 		initView(view);
@@ -45,24 +44,24 @@ public class AppTuiFragment extends Fragment {
 
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-					long arg3) {
+									long arg3) {
 				switch (arg2) {
-				case 0:
-					Intent i = getIntent(getActivity(),"com.bugkr.beautyidea");
-					boolean b = judge(getActivity(), i);
-					if (b == false) {
-						startActivity(i);
-					}
-					break;
-				case 1:
-					Intent it = getIntent(getActivity(),"com.shangpuyun.yunzhang");
-					boolean bo = judge(getActivity(), it);
-					if (bo == false) {
-						startActivity(it);
-					}
-					break;
-				default:
-					break;
+					case 0:
+						Intent i = getIntent(getActivity(),"com.bugkr.beautyidea");
+						boolean b = judge(getActivity(), i);
+						if (b == false) {
+							startActivity(i);
+						}
+						break;
+					case 1:
+						Intent it = getIntent(getActivity(),"com.shangpuyun.yunzhang");
+						boolean bo = judge(getActivity(), it);
+						if (bo == false) {
+							startActivity(it);
+						}
+						break;
+					default:
+						break;
 				}
 			}
 		});
@@ -77,7 +76,7 @@ public class AppTuiFragment extends Fragment {
 		return new Intent("android.intent.action.VIEW", localUri);
 	}
 
-	// ֱ����ת���ж��Ƿ�����г�Ӧ��
+	// 直接跳转不判断是否存在市场应用
 	public static void start(Context paramContext, String paramString) {
 		Uri localUri = Uri.parse(paramString);
 		Intent localIntent = new Intent("android.intent.action.VIEW", localUri);

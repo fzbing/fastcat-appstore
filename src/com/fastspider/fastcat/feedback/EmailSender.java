@@ -15,7 +15,6 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
-
 public class EmailSender {
 	private Properties properties;
 	private Session session;
@@ -28,11 +27,11 @@ public class EmailSender {
 	}
 
 	public void setProperties(String host, String post) {
-		// ��ַ
+		// 地址
 		this.properties.put("mail.smtp.host", host);
-		// �˿ں�
+		// 端口号
 		this.properties.put("mail.smtp.post", post);
-		// �Ƿ���֤
+		// 是否验证
 		this.properties.put("mail.smtp.auth", true);
 		this.session = Session.getInstance(properties);
 		this.message = new MimeMessage(session);
@@ -40,8 +39,8 @@ public class EmailSender {
 	}
 
 	/**
-	 * �����ռ���
-	 * 
+	 * 设置收件人
+	 *
 	 * @param receiver
 	 * @throws MessagingException
 	 */
@@ -54,14 +53,14 @@ public class EmailSender {
 	}
 
 	/**
-	 * �����ʼ�
-	 * 
+	 * 设置邮件
+	 *
 	 * @param from
-	 *            ��Դ
+	 *            来源
 	 * @param title
-	 *            ����
+	 *            标题
 	 * @param content
-	 *            ����
+	 *            内容
 	 * @throws AddressException
 	 * @throws MessagingException
 	 */
@@ -71,17 +70,17 @@ public class EmailSender {
 			MessagingException {
 		this.message.setFrom(new InternetAddress(from));
 		this.message.setSubject(title);
-		// ���ı��Ļ���setText()���У������и�������ʾ������������
+		// 纯文本的话用setText()就行，不过有附件就显示不出来内容了
 		MimeBodyPart textBody = new MimeBodyPart();
 		textBody.setContent(content, "text/html;charset=gbk");
 		this.multipart.addBodyPart(textBody);
 	}
 
 	/**
-	 * ��Ӹ���
-	 * 
+	 * 添加附件
+	 *
 	 * @param filePath
-	 *            �ļ�·��
+	 *            文件路径
 	 * @throws MessagingException
 	 */
 	public void addAttachment(String filePath) throws MessagingException {
@@ -94,30 +93,30 @@ public class EmailSender {
 	}
 
 	/**
-	 * �����ʼ�
-	 * 
+	 * 发送邮件
+	 *
 	 * @param host
-	 *            ��ַ
+	 *            地址
 	 * @param account
-	 *            �˻���
+	 *            账户名
 	 * @param pwd
-	 *            ����
+	 *            密码
 	 * @throws MessagingException
 	 */
 	public void sendEmail(String host, String account, String pwd)
 			throws MessagingException {
-		// ����ʱ��
+		// 发送时间
 		this.message.setSentDate(new Date());
-		// ���͵����ݣ��ı��͸���
+		// 发送的内容，文本和附件
 		this.message.setContent(this.multipart);
 		this.message.saveChanges();
-		// �����ʼ����Ͷ��󣬲�ָ����ʹ��SMTPЭ�鷢���ʼ�
+		// 创建邮件发送对象，并指定其使用SMTP协议发送邮件
 		Transport transport = session.getTransport("smtp");
-		// ��¼����
+		// 登录邮箱
 		transport.connect(host, account, pwd);
-		// �����ʼ�
+		// 发送邮件
 		transport.sendMessage(message, message.getAllRecipients());
-		// �ر�����
+		// 关闭连接
 		transport.close();
 	}
 }

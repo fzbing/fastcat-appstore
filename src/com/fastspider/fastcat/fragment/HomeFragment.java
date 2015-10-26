@@ -29,7 +29,6 @@ import com.umeng.analytics.MobclickAgent;
 import com.fastspider.fastcat.R;
 import com.fastspider.fastcat.adapter.HomeAdapter;
 import com.fastspider.fastcat.lib.NetWorkUtil;
-
 public class HomeFragment extends Fragment implements
 		android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener {
 	private HomeAdapter adapter;
@@ -48,7 +47,7 @@ public class HomeFragment extends Fragment implements
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
+							 Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_home, container, false);
 		initView(view);
 		return view;
@@ -60,7 +59,7 @@ public class HomeFragment extends Fragment implements
 		listView = (ListView) view.findViewById(R.id.listView);
 		swipe = (SwipeRefreshLayout) view.findViewById(R.id.swipe);
 		swipe.setOnRefreshListener(this);
-		// ����ˢ�µ���ʽ
+		// 顶部刷新的样式
 		swipe.setColorSchemeResources(android.R.color.holo_red_light,
 				android.R.color.holo_green_light,
 				android.R.color.holo_blue_bright,
@@ -134,20 +133,12 @@ public class HomeFragment extends Fragment implements
 		}
 	}
 
-	// public void onResume() {
-	// super.onResume();
-	// MobclickAgent.onPageStart("MainScreen"); //ͳ��ҳ��
-	// }
-	// public void onPause() {
-	// super.onPause();
-	// MobclickAgent.onPageEnd("MainScreen");
-	// }
 	@Override
 	public void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		// MobclickAgent.onPageStart("MainScreen"); //ͳ��ҳ��
-		MobclickAgent.onResume(getActivity()); // ͳ��ʱ��
+		// MobclickAgent.onPageStart("MainScreen"); //统计页面
+		MobclickAgent.onResume(getActivity()); // 统计时长
 	}
 
 	@Override
@@ -168,7 +159,7 @@ public class HomeFragment extends Fragment implements
 					adapter = new HomeAdapter(getActivity(), listView);
 					listView.setAdapter(adapter);
 				} else {
-					Toast.makeText(getActivity(), "��������ʧ��..", 1).show();
+					Toast.makeText(getActivity(), "网络连接失败..", 1).show();
 					progressbar.setVisibility(View.GONE);
 					if (sections != null || sections.size() != 0) {
 						adapter = new HomeAdapter(getActivity(), listView);

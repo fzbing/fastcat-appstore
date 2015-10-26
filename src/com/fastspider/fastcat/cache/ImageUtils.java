@@ -36,10 +36,9 @@ import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.DisplayMetrics;
-
 /**
- * ͼƬ�������߰�
- * 
+ * 图片操作工具包
+ *
  * @author liux (http://my.oschina.net/liux)
  * @version 1.0
  * @created 2012-3-21
@@ -49,16 +48,16 @@ public class ImageUtils {
 	public final static String SDCARD_MNT = "/mnt/sdcard";
 	public final static String SDCARD = "/sdcard";
 
-	/** ������� */
+	/** 请求相册 */
 	public static final int REQUEST_CODE_GETIMAGE_BYSDCARD = 0;
-	/** ������� */
+	/** 请求相机 */
 	public static final int REQUEST_CODE_GETIMAGE_BYCAMERA = 1;
-	/** ����ü� */
+	/** 请求裁剪 */
 	public static final int REQUEST_CODE_GETIMAGE_BYCROP = 2;
 
 	/**
-	 * дͼƬ�ļ� ��Androidϵͳ�У��ļ������� /data/data/PACKAGE_NAME/files Ŀ¼��
-	 * 
+	 * 写图片文件 在Android系统中，文件保存在 /data/data/PACKAGE_NAME/files 目录下
+	 *
 	 * @throws IOException
 	 */
 	public static void saveImage(Context context, String fileName, Bitmap bitmap)
@@ -67,7 +66,7 @@ public class ImageUtils {
 	}
 
 	public static void saveImage(Context context, String fileName,
-			Bitmap bitmap, int quality) throws IOException {
+								 Bitmap bitmap, int quality) throws IOException {
 		if (bitmap == null || fileName == null || context == null)
 			return;
 
@@ -81,12 +80,12 @@ public class ImageUtils {
 	}
 
 	/**
-	 * дͼƬ�ļ���SD��
-	 * 
+	 * 写图片文件到SD卡
+	 *
 	 * @throws IOException
 	 */
 	public static void saveImageToSD(Context ctx, String filePath,
-			Bitmap bitmap, int quality) throws IOException {
+									 Bitmap bitmap, int quality) throws IOException {
 		if (bitmap != null) {
 			File file = new File(filePath.substring(0,
 					filePath.lastIndexOf(File.separator)));
@@ -103,7 +102,7 @@ public class ImageUtils {
 			}
 		}
 	}
-	
+
 	public static void saveBackgroundImage(Context ctx, String filePath, Bitmap bitmap, int quality) throws IOException{
 		if (bitmap != null) {
 			File file = new File(filePath.substring(0,
@@ -123,7 +122,7 @@ public class ImageUtils {
 	}
 
 	/**
-	 * ��Gallery�������Ͽ�����ͼƬ
+	 * 让Gallery上能马上看到该图片
 	 */
 	private static void scanPhoto(Context ctx, String imgFileName) {
 		Intent mediaScanIntent = new Intent(
@@ -135,8 +134,8 @@ public class ImageUtils {
 	}
 
 	/**
-	 * ��ȡbitmap
-	 * 
+	 * 获取bitmap
+	 *
 	 * @param context
 	 * @param fileName
 	 * @return
@@ -161,8 +160,8 @@ public class ImageUtils {
 	}
 
 	/**
-	 * ��ȡbitmap
-	 * 
+	 * 获取bitmap
+	 *
 	 * @param filePath
 	 * @return
 	 */
@@ -171,7 +170,7 @@ public class ImageUtils {
 	}
 
 	public static Bitmap getBitmapByPath(String filePath,
-			BitmapFactory.Options opts) {
+										 BitmapFactory.Options opts) {
 		FileInputStream fis = null;
 		Bitmap bitmap = null;
 		try {
@@ -192,8 +191,8 @@ public class ImageUtils {
 	}
 
 	/**
-	 * ��ȡbitmap
-	 * 
+	 * 获取bitmap
+	 *
 	 * @param file
 	 * @return
 	 */
@@ -217,8 +216,8 @@ public class ImageUtils {
 	}
 
 	/**
-	 * ʹ�õ�ǰʱ���ƴ��һ��Ψһ���ļ���
-	 * 
+	 * 使用当前时间戳拼接一个唯一的文件名
+	 *
 	 * @param format
 	 * @return
 	 */
@@ -230,8 +229,8 @@ public class ImageUtils {
 	}
 
 	/**
-	 * ��ȡ�����ʹ�õ�Ŀ¼
-	 * 
+	 * 获取照相机使用的目录
+	 *
 	 * @return
 	 */
 	public static String getCamerPath() {
@@ -240,8 +239,8 @@ public class ImageUtils {
 	}
 
 	/**
-	 * �жϵ�ǰUrl�Ƿ��׼��content://��ʽ������ǣ��򷵻ؾ��·��
-	 * 
+	 * 判断当前Url是否标准的content://样式，如果不是，则返回绝对路径
+	 *
 	 * @param uri
 	 * @return
 	 */
@@ -265,8 +264,8 @@ public class ImageUtils {
 	}
 
 	/**
-	 * ͨ��uri��ȡ�ļ��ľ��·��
-	 * 
+	 * 通过uri获取文件的绝对路径
+	 *
 	 * @param uri
 	 * @return
 	 */
@@ -275,7 +274,7 @@ public class ImageUtils {
 		String imagePath = "";
 		String[] proj = { MediaStore.Images.Media.DATA };
 		Cursor cursor = context.managedQuery(uri, proj, // Which columns to
-														// return
+				// return
 				null, // WHERE clause; which rows to return (all rows)
 				null, // WHERE clause selection arguments (none)
 				null); // Order-by clause (ascending by name)
@@ -292,8 +291,8 @@ public class ImageUtils {
 	}
 
 	/**
-	 * ��ȡͼƬ����ͼ ֻ��Android2.1���ϰ汾֧��
-	 * 
+	 * 获取图片缩略图 只有Android2.1以上版本支持
+	 *
 	 * @param imgName
 	 * @param kind
 	 *            MediaStore.Images.Thumbnails.MICRO_KIND
@@ -301,7 +300,7 @@ public class ImageUtils {
 	 */
 	@SuppressWarnings("deprecation")
 	public static Bitmap loadImgThumbnail(Activity context, String imgName,
-			int kind) {
+										  int kind) {
 		Bitmap bitmap = null;
 
 		String[] proj = { MediaStore.Images.Media._ID,
@@ -328,8 +327,8 @@ public class ImageUtils {
 	}
 
 	/**
-	 * ��ȡSD��������ͼƬ·��
-	 * 
+	 * 获取SD卡中最新图片路径
+	 *
 	 * @return
 	 */
 	@SuppressWarnings({ "deprecation", "unused" })
@@ -354,8 +353,8 @@ public class ImageUtils {
 	}
 
 	/**
-	 * ��������ͼƬ�Ŀ��
-	 * 
+	 * 计算缩放图片的宽高
+	 *
 	 * @param img_size
 	 * @param square_size
 	 * @return
@@ -370,92 +369,92 @@ public class ImageUtils {
 	}
 
 	/**
-	 * ��������ͼ
-	 * 
+	 * 创建缩略图
+	 *
 	 * @param context
 	 * @param largeImagePath
-	 *            ԭʼ��ͼ·��
+	 *            原始大图路径
 	 * @param thumbfilePath
-	 *            �������ͼ·��
+	 *            输出缩略图路径
 	 * @param square_size
-	 *            ���ͼƬ���
+	 *            输出图片宽度
 	 * @param quality
-	 *            ���ͼƬ����
+	 *            输出图片质量
 	 * @throws IOException
 	 */
 	public static void createImageThumbnail(Context context,
-			String largeImagePath, String thumbfilePath, int square_size,
-			int quality) throws IOException {
+											String largeImagePath, String thumbfilePath, int square_size,
+											int quality) throws IOException {
 		BitmapFactory.Options opts = new BitmapFactory.Options();
 		opts.inSampleSize = 1;
-		// ԭʼͼƬbitmap
+		// 原始图片bitmap
 		Bitmap cur_bitmap = getBitmapByPath(largeImagePath, opts);
 
 		if (cur_bitmap == null)
 			return;
 
-		// ԭʼͼƬ�ĸ߿�
+		// 原始图片的高宽
 		int[] cur_img_size = new int[] { cur_bitmap.getWidth(),
 				cur_bitmap.getHeight() };
-		// ����ԭʼͼƬ���ź�Ŀ��
+		// 计算原始图片缩放后的宽高
 		int[] new_img_size = scaleImageSize(cur_img_size, square_size);
-		// ������ź��bitmap
+		// 生成缩放后的bitmap
 		Bitmap thb_bitmap = zoomBitmap(cur_bitmap, new_img_size[0],
 				new_img_size[1]);
-		// ������ź��ͼƬ�ļ�
+		// 生成缩放后的图片文件
 		saveImageToSD(null,thumbfilePath, thb_bitmap, quality);
 	}
 
 	/**
-	 * �Ŵ���СͼƬ
-	 * 
+	 * 放大缩小图片
+	 *
 	 * @param bitmap
 	 * @param w
 	 * @param h
 	 * @return
 	 */
 	public static Bitmap zoomBitmap(Bitmap bgimage, double newWidth, double newHeight) {
-		
-		// ��ȡ���ͼƬ�Ŀ�͸� 
-        float width = bgimage.getWidth(); 
-        float height = bgimage.getHeight(); 
-        // ��������ͼƬ�õ�matrix���� 
-        Matrix matrix = new Matrix(); 
-        // ������������ 
-        float scaleWidth = ((float) newWidth) / width; 
-        float scaleHeight = ((float) newHeight) / height; 
-        // ����ͼƬ���� 
-        matrix.postScale(scaleWidth, scaleHeight); 
-        Bitmap bitmap = Bitmap.createBitmap(bgimage, 0, 0, (int) width, 
-                        (int) height, matrix, true); 
-        return bitmap; 
+
+		// 获取这个图片的宽和高
+		float width = bgimage.getWidth();
+		float height = bgimage.getHeight();
+		// 创建操作图片用的matrix对象
+		Matrix matrix = new Matrix();
+		// 计算宽高缩放率
+		float scaleWidth = ((float) newWidth) / width;
+		float scaleHeight = ((float) newHeight) / height;
+		// 缩放图片动作
+		matrix.postScale(scaleWidth, scaleHeight);
+		Bitmap bitmap = Bitmap.createBitmap(bgimage, 0, 0, (int) width,
+				(int) height, matrix, true);
+		return bitmap;
 	}
 
 	public static Bitmap scaleBitmap(Bitmap bitmap) {
-		// ��ȡ���ͼƬ�Ŀ�͸�
+		// 获取这个图片的宽和高
 		int width = bitmap.getWidth();
 		int height = bitmap.getHeight();
-		// ����Ԥת���ɵ�ͼƬ�Ŀ�Ⱥ͸߶�
+		// 定义预转换成的图片的宽度和高度
 		int newWidth = 200;
 		int newHeight = 200;
-		// ���������ʣ��³ߴ��ԭʼ�ߴ�
+		// 计算缩放率，新尺寸除原始尺寸
 		float scaleWidth = ((float) newWidth) / width;
 		float scaleHeight = ((float) newHeight) / height;
-		// ��������ͼƬ�õ�matrix����
+		// 创建操作图片用的matrix对象
 		Matrix matrix = new Matrix();
-		// ����ͼƬ����
+		// 缩放图片动作
 		matrix.postScale(scaleWidth, scaleHeight);
-		// ��תͼƬ ����
+		// 旋转图片 动作
 		// matrix.postRotate(45);
-		// �����µ�ͼƬ
+		// 创建新的图片
 		Bitmap resizedBitmap = Bitmap.createBitmap(bitmap, 0, 0, width, height,
 				matrix, true);
 		return resizedBitmap;
 	}
 
 	/**
-	 * (����)�ػ�ͼƬ
-	 * 
+	 * (缩放)重绘图片
+	 *
 	 * @param context
 	 *            Activity
 	 * @param bitmap
@@ -469,33 +468,33 @@ public class ImageUtils {
 		int height = bitmap.getHeight();
 		int width = bitmap.getWidth();
 		float zoomScale;
-		/** ��ʽ1 **/
-		// if(rWidth/rHeight>width/height){//�Ը�Ϊ׼
+		/** 方式1 **/
+		// if(rWidth/rHeight>width/height){//以高为准
 		// zoomScale=((float) rHeight) / height;
 		// }else{
-		// //if(rWidth/rHeight<width/height)//�Կ�Ϊ׼
+		// //if(rWidth/rHeight<width/height)//以宽为准
 		// zoomScale=((float) rWidth) / width;
 		// }
-		/** ��ʽ2 **/
-		// if(width*1.5 >= height) {//�Կ�Ϊ׼
+		/** 方式2 **/
+		// if(width*1.5 >= height) {//以宽为准
 		// if(width >= rWidth)
 		// zoomScale = ((float) rWidth) / width;
 		// else
 		// zoomScale = 1.0f;
-		// }else {//�Ը�Ϊ׼
+		// }else {//以高为准
 		// if(height >= rHeight)
 		// zoomScale = ((float) rHeight) / height;
 		// else
 		// zoomScale = 1.0f;
 		// }
-		/** ��ʽ3 **/
+		/** 方式3 **/
 		if (width >= rWidth)
 			zoomScale = ((float) rWidth) / width;
 		else
 			zoomScale = 1.0f;
-		// ��������ͼƬ�õ�matrix����
+		// 创建操作图片用的matrix对象
 		Matrix matrix = new Matrix();
-		// ����ͼƬ����
+		// 缩放图片动作
 		matrix.postScale(zoomScale, zoomScale);
 		Bitmap resizedBitmap = Bitmap.createBitmap(bitmap, 0, 0,
 				bitmap.getWidth(), bitmap.getHeight(), matrix, true);
@@ -503,8 +502,8 @@ public class ImageUtils {
 	}
 
 	/**
-	 * ��Drawableת��ΪBitmap
-	 * 
+	 * 将Drawable转化为Bitmap
+	 *
 	 * @param drawable
 	 * @return
 	 */
@@ -522,11 +521,11 @@ public class ImageUtils {
 	}
 
 	/**
-	 * ���Բ��ͼƬ�ķ���
-	 * 
+	 * 获得圆角图片的方法
+	 *
 	 * @param bitmap
 	 * @param roundPx
-	 *            һ�����14
+	 *            一般设成14
 	 * @return
 	 */
 	public static Bitmap getRoundedCornerBitmap(Bitmap bitmap, float roundPx) {
@@ -552,8 +551,8 @@ public class ImageUtils {
 	}
 
 	/**
-	 * ��ô�Ӱ��ͼƬ����
-	 * 
+	 * 获得带倒影的图片方法
+	 *
 	 * @param bitmap
 	 * @return
 	 */
@@ -593,8 +592,8 @@ public class ImageUtils {
 	}
 
 	/**
-	 * ��bitmapת��Ϊdrawable
-	 * 
+	 * 将bitmap转化为drawable
+	 *
 	 * @param bitmap
 	 * @return
 	 */
@@ -605,8 +604,8 @@ public class ImageUtils {
 	}
 
 	/**
-	 * ��ȡͼƬ����
-	 * 
+	 * 获取图片类型
+	 *
 	 * @param file
 	 * @return
 	 */
@@ -632,8 +631,8 @@ public class ImageUtils {
 	}
 
 	/**
-	 * ��ȡͼƬ��������Ϣ
-	 * 
+	 * 获取图片的类型信息
+	 *
 	 * @param in
 	 * @return
 	 * @see #getImageType(byte[])
@@ -652,8 +651,8 @@ public class ImageUtils {
 	}
 
 	/**
-	 * ��ȡͼƬ��������Ϣ
-	 * 
+	 * 获取图片的类型信息
+	 *
 	 * @param bytes
 	 *            2~8 byte at beginning of the image file
 	 * @return image mimetype or null if the file is not image
