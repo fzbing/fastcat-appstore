@@ -44,14 +44,14 @@ import com.fastspider.fastcat.service.AppUpdateService;
 public class SettingActivity extends Activity implements OnPreferenceChangeListener{
 	ListView lv;
 	SettingAdapter adapter;
-	String[] items = { "�����", "������","�͸�����","QQȺ��271436525", "����", "ע���¼" };
-	int vc;// ��ȡ��ǰ�汾��
+	String[] items = { "意见反馈", "检查更新","赏个好评","QQ群：271436525", "清除缓存", "注销登录" };
+	int vc;// 获取当前版本号
 	File sdcardDir;
 	String path;
 	File f;
 	File[] fl;
 	ACache mCache;
-	private boolean isExit = true;// trueΪ��¼״̬
+	private boolean isExit = true;// true为登录状态
 	private CountDownTimer timer;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -65,11 +65,10 @@ public class SettingActivity extends Activity implements OnPreferenceChangeListe
 //		tintManager.setStatusBarTintEnabled(true);
 //		tintManager.setStatusBarTintResource(R.color.actionbar_color);
 		mCache = ACache.get(this);
-		vc = getVersionCode(this); 
 		ActionBar ab = getActionBar();
 		ab.setDisplayHomeAsUpEnabled(true);
 		ab.setHomeButtonEnabled(true);
-		ab.setTitle("����");
+		ab.setTitle("设置");
 		lv = (ListView) findViewById(R.id.lv);
 		adapter = new SettingAdapter(items, this);
 		lv.setAdapter(adapter);
@@ -77,46 +76,89 @@ public class SettingActivity extends Activity implements OnPreferenceChangeListe
 
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-					long arg3) {
+									long arg3) {
 				Intent it = new Intent();
 				switch (arg2) {
-				case 0:
-					it.setClass(getApplicationContext(), FeedBackActivity.class);
-					startActivity(it);
-					break;
-				case 1:
-					chekedVersionCode();
-					break;
-				case 2:
-					Intent i = getIntent(SettingActivity.this,"com.fastspider.fastcat");
-					boolean b = judge(SettingActivity.this, i);
-					if (b == false) {
-						startActivity(i);
-					}
-					break;
-				case 3:
-					ClipboardManager clip = (ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
-					clip.setText("271436525"); // ����
-					showCustomToast(getString(R.string.back_exit_qq),
-							R.id.ll_setting_id);
-					break;
-				case 4:
-
-					sdcardDir = Environment.getExternalStorageDirectory();
-					path = sdcardDir.getPath() + "/zhidu";
-					f = new File(path);
-					fl = f.listFiles();
-					Log.e("fl.length==", fl.length + "");
-					if (fl.length == 0) {
-						showCustomToast(getString(R.string.back_exit_no),
+					case 0:
+						it.setClass(getApplicationContext(), FeedBackActivity.class);
+						startActivity(it);
+						break;
+					case 1:
+						chekedVersionCode();
+						break;
+					case 2:
+						Intent i = getIntent(SettingActivity.this,"com.fastspider.fastcat");
+						boolean b = judge(SettingActivity.this, i);
+						if (b == false) {
+							startActivity(i);
+						}
+						break;
+					case 3:
+						ClipboardManager clip = (ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
+						clip.setText("271436525"); // 复制
+						showCustomToast(getString(R.string.back_exit_qq),
 								R.id.ll_setting_id);
-					} else {
+						break;
+					case 4:
+
+						sdcardDir = Environment.getExternalStorageDirectory();
+						path = sdcardDir.getPath() + "/zhidu";
+						f = new File(path);
+						fl = f.listFiles();
+						Log.e("fl.length==", fl.length + "");
+						if (fl.length == 0) {
+							showCustomToast(getString(R.string.back_exit_no),
+									R.id.ll_setting_id);
+						} else {
+							new SweetAlertDialog(SettingActivity.this,
+									SweetAlertDialog.CUSTOM_IMAGE_TYPE)
+									.setTitleText("清除缓存")
+									.setContentText("是否清除缓存？")
+									.setCancelText("暂不清除")
+									.setConfirmText("清除缓存")
+									.showCancelButton(true)
+									.setCancelClickListener(
+											new SweetAlertDialog.OnSweetClickListener() {
+												@Override
+												public void onClick(
+														SweetAlertDialog sDialog) {
+													sDialog.dismiss();
+												}
+											})
+									.setConfirmClickListener(
+											new SweetAlertDialog.OnSweetClickListener() {
+												@Override
+												public void onClick(
+														SweetAlertDialog sDialog) {
+
+													//
+													for (int i = 0; i < fl.length; i++) {
+														if (fl[i].toString()
+																.endsWith(".mp3")
+																|| fl[i].toString()
+																.endsWith(
+																		".MP3")||fl[i].toString()
+																.endsWith(".jpg")||fl[i].toString()
+																.endsWith(".JPG")) {
+															fl[i].delete();
+														}
+													}
+													showCustomToast(getString(R.string.back_exit_success),
+															R.id.ll_setting_id);
+													sDialog.dismiss();
+												}
+											}).show();
+						}
+
+						break;
+					case 5:
+
 						new SweetAlertDialog(SettingActivity.this,
 								SweetAlertDialog.CUSTOM_IMAGE_TYPE)
-								.setTitleText("����")
-								.setContentText("�Ƿ����棿")
-								.setCancelText("�ݲ����")
-								.setConfirmText("����")
+								.setTitleText("注销登录")
+								.setContentText("是否注销登录？")
+								.setCancelText("暂不注销")
+								.setConfirmText("注销登录")
 								.showCancelButton(true)
 								.setCancelClickListener(
 										new SweetAlertDialog.OnSweetClickListener() {
@@ -132,62 +174,19 @@ public class SettingActivity extends Activity implements OnPreferenceChangeListe
 											public void onClick(
 													SweetAlertDialog sDialog) {
 
-												//
-												for (int i = 0; i < fl.length; i++) {
-													if (fl[i].toString()
-															.endsWith(".mp3")
-															|| fl[i].toString()
-																	.endsWith(
-																			".MP3")||fl[i].toString()
-																			.endsWith(".jpg")||fl[i].toString()
-																			.endsWith(".JPG")) {
-														fl[i].delete();
-													}
-												}
-												showCustomToast(getString(R.string.back_exit_success),
-														R.id.ll_setting_id);
+												mCache.clear();
+												isExit = false;
+
 												sDialog.dismiss();
 											}
 										}).show();
-					}
 
-					break;
-				case 5:
+						break;
+					case 6:
 
-					new SweetAlertDialog(SettingActivity.this,
-							SweetAlertDialog.CUSTOM_IMAGE_TYPE)
-							.setTitleText("ע���¼")
-							.setContentText("�Ƿ�ע���¼��")
-							.setCancelText("�ݲ�ע��")
-							.setConfirmText("ע���¼")
-							.showCancelButton(true)
-							.setCancelClickListener(
-									new SweetAlertDialog.OnSweetClickListener() {
-										@Override
-										public void onClick(
-												SweetAlertDialog sDialog) {
-											sDialog.dismiss();
-										}
-									})
-							.setConfirmClickListener(
-									new SweetAlertDialog.OnSweetClickListener() {
-										@Override
-										public void onClick(
-												SweetAlertDialog sDialog) {
-
-											mCache.clear();
-											isExit = false;
-
-											sDialog.dismiss();
-										}
-									}).show();
-
-					break;
-				case 6:
-					 
-					break;
-				default:
-					break;
+						break;
+					default:
+						break;
 				}
 			}
 		});
@@ -204,36 +203,36 @@ public class SettingActivity extends Activity implements OnPreferenceChangeListe
 		}
 		win.setAttributes(winParams);
 	}
-	  /**
-     * ��ʾShortToast
-     */
-    public void showCustomToast(String pMsg, int view_position) {
-	// ToastUtil.createCustomToast(this, pMsg, Toast.LENGTH_SHORT).show();
-	 Crouton.makeText(this, pMsg, Style.CONFIRM, view_position).show();
+	/**
+	 * 显示ShortToast
+	 */
+	public void showCustomToast(String pMsg, int view_position) {
+		// ToastUtil.createCustomToast(this, pMsg, Toast.LENGTH_SHORT).show();
+		Crouton.makeText(this, pMsg, Style.CONFIRM, view_position).show();
 //	Crouton.makeText(this, pMsg, Style.ALERT, view_position).show();
-    }
+	}
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		if (item.getItemId() == android.R.id.home) {
 			if (isExit == false) {
-				// �����ʹ��Intent����
+				// 数据是使用Intent返回
 				Intent intent = new Intent();
-				// �ѷ�����ݴ���Intent
+				// 把返回数据存入Intent
 				intent.putExtra("result", "exit");
-				// ���÷������
+				// 设置返回数据
 				SettingActivity.this.setResult(RESULT_OK, intent);
-				// �ر�Activity
+				// 关闭Activity
 				SettingActivity.this.finish();
 //				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
 				overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
 			} else {
-				// �����ʹ��Intent����
+				// 数据是使用Intent返回
 				Intent intent = new Intent();
-				// �ѷ�����ݴ���Intent
-				intent.putExtra("date", "�û�û���˳�---��¼״̬");
-				// ���÷������
+				// 把返回数据存入Intent
+				intent.putExtra("date", "用户没有退出---登录状态");
+				// 设置返回数据
 				SettingActivity.this.setResult(RESULT_OK, intent);
-				// �ر�Activity
+				// 关闭Activity
 				SettingActivity.this.finish();
 //				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
 				overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
@@ -245,85 +244,19 @@ public class SettingActivity extends Activity implements OnPreferenceChangeListe
 	}
 
 	/**
-	 * ��ȡ�汾��
-	 * 
-	 * @param context
+	 * 获取版本号
+	 *
+	 * @param
 	 * @return
 	 */
-	private int getVersionCode(Context context) {
-		int versionCode = 0;
-		try {
-			// ��ȡ����汾��
-			versionCode = context.getPackageManager().getPackageInfo(
-					"com.fastspider.fastcat", 1).versionCode;
-		} catch (NameNotFoundException e) {
-			e.printStackTrace();
-		}
-		return versionCode;
-	}
 
 	public void chekedVersionCode() {
 		if (!NetWorkUtil.networkCanUse(this)) {
 			new SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE)
-					.setTitleText("��������ʧ��...").setContentText("����������������Ƿ���")
+					.setTitleText("网络连接失败...").setContentText("请检查您的网络连接是否正常")
 					.show();
 			return;
 		}
-		Ion.with(this, Conf.VERSION_CODE).asJsonObject()
-				.setCallback(new FutureCallback<JsonObject>() {
-
-					@Override
-					public void onCompleted(Exception e, JsonObject result) {
-						if (e != null) {
-							return;
-						}
-						String code = result.get("code").getAsString();
-						int jsonCode = Integer.parseInt(code);
-						// �ȽϿ�Դ�й�ص�code��ǰ�汾code�Ƿ�һ��
-						if (jsonCode == vc) {
-							Log.e("11111", "�汾����ͬ��������" + "jsonCode:" + jsonCode);
-							new SweetAlertDialog(SettingActivity.this,
-									SweetAlertDialog.SUCCESS_TYPE)
-									.setTitleText("��ǰ�汾��������")
-									.setContentText("Version:" + getAppInfo())
-									.show();
-
-						} else if (jsonCode > vc) {
-							new SweetAlertDialog(SettingActivity.this,
-									SweetAlertDialog.WARNING_TYPE)
-									.setTitleText("�汾���")
-									.setContentText("�����°汾���Ƿ���£�")
-									.setCancelText("�ݲ�����")
-									.setConfirmText("���ϸ���")
-									.showCancelButton(true)
-									.setCancelClickListener(
-											new SweetAlertDialog.OnSweetClickListener() {
-												@Override
-												public void onClick(
-														SweetAlertDialog sDialog) {
-													sDialog.dismiss();
-												}
-											})
-									.setConfirmClickListener(
-											new SweetAlertDialog.OnSweetClickListener() {
-												@Override
-												public void onClick(
-														SweetAlertDialog sDialog) {
-													Intent updateIntent = new Intent(
-															SettingActivity.this,
-															AppUpdateService.class);
-													updateIntent.putExtra(
-															"titleId",
-															R.string.app_name);
-													startService(updateIntent);
-													sDialog.dismiss();
-
-												}
-											}).show();
-						}
-
-					}
-				});
 	}
 
 	private String getAppInfo() {
@@ -339,26 +272,26 @@ public class SettingActivity extends Activity implements OnPreferenceChangeListe
 
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if (keyCode == KeyEvent.KEYCODE_BACK) { // ���/����/���η��ؼ�
+		if (keyCode == KeyEvent.KEYCODE_BACK) { // 监控/拦截/屏蔽返回键
 			if (isExit == false) {
-				// �����ʹ��Intent����
+				// 数据是使用Intent返回
 				Intent intent = new Intent();
-				// �ѷ�����ݴ���Intent
+				// 把返回数据存入Intent
 				intent.putExtra("result", "exit");
-				// ���÷������
+				// 设置返回数据
 				SettingActivity.this.setResult(RESULT_OK, intent);
-				// �ر�Activity
+				// 关闭Activity
 				SettingActivity.this.finish();
 //				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
 				overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
 			} else {
-				// �����ʹ��Intent����
+				// 数据是使用Intent返回
 				Intent intent = new Intent();
-				// �ѷ�����ݴ���Intent
-				intent.putExtra("date", "�û�û���˳�---��¼״̬");
-				// ���÷������
+				// 把返回数据存入Intent
+				intent.putExtra("date", "用户没有退出---登录状态");
+				// 设置返回数据
 				SettingActivity.this.setResult(RESULT_OK, intent);
-				// �ر�Activity
+				// 关闭Activity
 				SettingActivity.this.finish();
 //				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
 				overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
@@ -367,7 +300,7 @@ public class SettingActivity extends Activity implements OnPreferenceChangeListe
 		}
 		return super.onKeyDown(keyCode, event);
 	}
-	
+
 	public static Intent getIntent(Context paramContext,String packageName) {
 		StringBuilder localStringBuilder = new StringBuilder()
 				.append("market://details?id=");
@@ -377,7 +310,7 @@ public class SettingActivity extends Activity implements OnPreferenceChangeListe
 		return new Intent("android.intent.action.VIEW", localUri);
 	}
 
-	// ֱ����ת���ж��Ƿ�����г�Ӧ��
+	// 直接跳转不判断是否存在市场应用
 	public static void start(Context paramContext, String paramString) {
 		Uri localUri = Uri.parse(paramString);
 		Intent localIntent = new Intent("android.intent.action.VIEW", localUri);
@@ -399,11 +332,11 @@ public class SettingActivity extends Activity implements OnPreferenceChangeListe
 	@Override
 	public boolean onPreferenceChange(Preference preference, Object newValue) {
 		if (Boolean.parseBoolean(newValue.toString())) {
-			
-		 
+
+
 		}
-	 
-	
+
+
 		return true;
 	}
 }

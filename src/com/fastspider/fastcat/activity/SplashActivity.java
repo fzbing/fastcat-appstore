@@ -46,7 +46,7 @@ public class SplashActivity extends Activity {
 		String name = mCache.getAsString("name");
 		try {
 			if (avatar.equals("")) {
-				logo_name.setText("ָ��");
+				logo_name.setText("快喵");
 				iv_main_left_head.setImageResource(R.drawable.ic_launcher);
 				
 			} else {
@@ -63,7 +63,7 @@ public class SplashActivity extends Activity {
 			}
 
 			if (!name.equals("")) {
-				logo_name.setText(name+",��ӭ����");
+				logo_name.setText(name);
 			}  
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -71,7 +71,6 @@ public class SplashActivity extends Activity {
 		logo_text = (TextView) findViewById(R.id.logo_text);
 		try {
 			String str = getVersionName();
-			logo_text.setText("��ǰ�汾�ţ�"+str);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -82,19 +82,19 @@ public class ArticleContentActivity extends Activity implements OnClickListener 
 
 	public void onClickShare(View v) {
 		Intent intent = new Intent(Intent.ACTION_SEND);
-		// ������������
+		// 分享的数据类型
 		intent.setType("text/plain");
-		// ���������
-		intent.putExtra(Intent.EXTRA_SUBJECT, "����");
-		// ���������
+		// 分享的主题
+		intent.putExtra(Intent.EXTRA_SUBJECT, "分享");
+		// 分享的内容
 		intent.putExtra(
 				Intent.EXTRA_TEXT,
-				"С����ǿ������ذ�"
+				"小伙伴们快来下载吧"
 						+ "\n"
 						+ Conf.DOWNLOAD_APK);
-		// ���������µ�Activity
+		// 允许启动新的Activity
 		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		// Ŀ��Ӧ��Ѱ�ҶԻ���ı���
+		// 目标应用寻找对话框的标题
 		startActivity(Intent.createChooser(intent, getTitle()));
 	}
 

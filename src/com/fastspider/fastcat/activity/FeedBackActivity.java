@@ -48,7 +48,7 @@ public class FeedBackActivity extends Activity {
 //		tintManager.setStatusBarTintEnabled(true);
 //		tintManager.setStatusBarTintResource(R.color.actionbar_color);
 		ActionBar ab = getActionBar();
-		setTitle("�����");
+		setTitle("意见反馈");
 		ab.setDisplayHomeAsUpEnabled(true);
 		ab.setHomeButtonEnabled(true);
 		try {
@@ -73,19 +73,19 @@ public class FeedBackActivity extends Activity {
 			@Override
 			public void run() {
 				EmailSender sender = new EmailSender();
-				// ���÷�������ַ�Ͷ˿ڣ������ѵĵ�
+				// 设置服务器地址和端口，网上搜的到
 				sender.setProperties("smtp.163.com", "25");// smtp.163.com
-				// �ֱ����÷����ˣ��ʼ�������ı�����
+				// 分别设置发件人，邮件标题和文本内容
 				try {
 					try {
 						sender.addAttachment(filepath);
 					} catch (Exception e) {
 						Log.e("e:", e + "");
 					}
-					sender.setMessage("xxx@163.com", contact, content);//����������&����&����
-					sender.setReceiver(new String[] { "xxxx@163.com" });// �ռ�������
+					sender.setMessage("xxx@163.com", contact, content);//发件人邮箱&标题&内容
+					sender.setReceiver(new String[] { "xxxx@163.com" });// 收件人邮箱
 					sender.sendEmail("smtp.163.com", "xxx@163.com",
-							"**********");//�����������Լ�����
+							"**********");//发件人邮箱以及密码
 				} catch (AddressException e) {
 					e.printStackTrace();
 				} catch (MessagingException e) {
@@ -101,7 +101,7 @@ public class FeedBackActivity extends Activity {
 		if (item.getItemId() == android.R.id.home) {
 			finish();
 			return true;
-		} else { 
+		} else {
 
 			// TODO Auto-generated method stub
 			String content = feedback_content_edit.getText().toString()
@@ -112,26 +112,26 @@ public class FeedBackActivity extends Activity {
 
 				if (NetWorkUtil.networkCanUse(getApplicationContext())) {
 					initData(contact, content);
-				  
+
 					finish();
 					Toast.makeText(getApplicationContext(),
-							"��л��ı������..", 1).show();
+							"感谢您的宝贵意见..", 1).show();
 				} else {
 					if (!NetWorkUtil.networkCanUse(FeedBackActivity.this)) {
 						new SweetAlertDialog(FeedBackActivity.this,
 								SweetAlertDialog.ERROR_TYPE)
-								.setTitleText("��������ʧ��...")
-								.setContentText("����������������Ƿ���").show();
-						 
+								.setTitleText("网络连接失败...")
+								.setContentText("请检查您的网络连接是否正常").show();
+
 					}
 				}
 
 			} else {
 				new SweetAlertDialog(FeedBackActivity.this).setTitleText(
-						"˵��ʲô��..").show();
+						"说点什么吧..").show();
 			}
-		
-			
+
+
 		}
 		return super.onOptionsItemSelected(item);
 	}
@@ -139,7 +139,7 @@ public class FeedBackActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.fb, menu);
-		 
+
 
 		return super.onCreateOptionsMenu(menu);
 	}
@@ -156,7 +156,7 @@ public class FeedBackActivity extends Activity {
 		}
 		win.setAttributes(winParams);
 	}
-	
+
 	public String getDeviceId() {
 		String imei = "";
 		Context ctx = getApplicationContext();

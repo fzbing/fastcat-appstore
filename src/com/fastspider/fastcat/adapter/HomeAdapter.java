@@ -72,7 +72,7 @@ public class HomeAdapter extends BaseAdapter {
 					.findViewById(R.id.item_vickeytalk_tv);
 			viewHolder.item_vickeytalk_iv = (ImageView) convertView
 					.findViewById(R.id.item_vickeytalk_iv);
-			
+
 //			viewHolder.flipLayout= (FlipLayout) convertView.findViewById(R.id.flipLayout);
 			convertView.setTag(viewHolder);
 		} else {
@@ -81,17 +81,17 @@ public class HomeAdapter extends BaseAdapter {
 		homeBean = homeList.get(position);
 		viewHolder.item_vickeytalk_tv.setText(homeBean.content);
 		viewHolder.item_vickeytalk_tv.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
 				viewHolder.item_vickeytalk_iv.setVisibility(View.VISIBLE);
 				viewHolder.item_vickeytalk_tv.setVisibility(View.GONE);
-				
+
 			}
 		});
 		viewHolder.item_vickeytalk_iv.setOnLongClickListener(new OnLongClickListener() {
-			
+
 			@Override
 			public boolean onLongClick(View arg0) {
 				// TODO Auto-generated method stub
@@ -104,46 +104,46 @@ public class HomeAdapter extends BaseAdapter {
 		Ion.with(context, homeBean.img).withBitmap()
 				.intoImageView(viewHolder.item_vickeytalk_iv);
 
- 
+
 		return convertView;
 	}
 
 	private class ViewHolder {
 		TextView item_vickeytalk_tv;
 		ImageView item_vickeytalk_iv;
-	    FlipLayout flipLayout;
+		FlipLayout flipLayout;
 	}
 	private void downImg(final int id) {
 		HttpUtils http = new HttpUtils();
 		HttpHandler handler = http.download(Conf.APP_IMG+id+".jpg",
-		    "/sdcard/zhidu/+"+id+".jpg",
-		    true, // ���Ŀ���ļ����ڣ�����δ��ɵĲ��ּ������ء���������֧��RANGEʱ���������ء�
-		    true, // �������󷵻���Ϣ�л�ȡ���ļ���������ɺ��Զ�������
-		    new RequestCallBack<File>() {
+				"/sdcard/zhidu/+"+id+".jpg",
+				true, // 如果目标文件存在，接着未完成的部分继续下载。服务器不支持RANGE时将从新下载。
+				true, // 如果从请求返回信息中获取到文件名，下载完成后自动重命名。
+				new RequestCallBack<File>() {
 
-		        @Override
-		        public void onStart() {
-		        	Log.e("onStart","........start......");
-		        }
+					@Override
+					public void onStart() {
+						Log.e("onStart","........start......");
+					}
 
-		        @Override
-		        public void onLoading(long total, long current, boolean isUploading) {
-		        	Log.e("onLoading",total+"|"+current);
-		        }
+					@Override
+					public void onLoading(long total, long current, boolean isUploading) {
+						Log.e("onLoading",total+"|"+current);
+					}
 
-		        @Override
-		        public void onSuccess(ResponseInfo<File> responseInfo) {
-		        	Log.e("onSuccess", responseInfo.toString());
-		        	Toast.makeText(context, "ͼƬ�ѱ��浽 /sdcard/zhidu/"+id+".jpg", 1).show();
-		        	
-		        }
+					@Override
+					public void onSuccess(ResponseInfo<File> responseInfo) {
+						Log.e("onSuccess", responseInfo.toString());
+						Toast.makeText(context, "图片已保存到 /sdcard/zhidu/"+id+".jpg", 1).show();
+
+					}
 
 
-		        @Override
-		        public void onFailure(HttpException error, String msg) {
-		        	Log.e("onFailure","........msg......"+msg);
-		        }
-		});
+					@Override
+					public void onFailure(HttpException error, String msg) {
+						Log.e("onFailure","........msg......"+msg);
+					}
+				});
 
 	}
 }

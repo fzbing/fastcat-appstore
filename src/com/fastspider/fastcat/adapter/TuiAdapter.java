@@ -54,10 +54,10 @@ public class TuiAdapter extends BaseAdapter{
 			if (position == 0) {
 				holder.logo_id
 						.setImageResource(R.drawable.logo_beautyidea);
-				holder.app_name.setText("��������");
+				holder.app_name.setText("快喵");
 			} else if (position == 1) {
 				holder.app_name.setTextColor(Color.RED);
-				holder.app_name.setText("��ڼ���������");
+				holder.app_name.setText("快喵");
 				holder.logo_id
 						.setImageResource(R.drawable.logo_shangpuyun);
 

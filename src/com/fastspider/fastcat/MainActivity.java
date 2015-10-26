@@ -70,48 +70,32 @@ import com.fastspider.fastcat.service.AppUpdateService;
 
 public class MainActivity extends FragmentActivity {
 	private DoubleClickExitHelper mDoubleClickExitHelper;
-	private TranslateAnimation myAnimation_Left;
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
 	RelativeLayout rl;
 	private ActionBarDrawerToggle mDrawerToggle;
 	private DrawerArrowDrawable drawerArrow;
 	public static FragmentManager fm;
-	private long exitTime = 0;
 	Boolean openOrClose = false;
-	int vc;// ��ȡ��ǰ�汾��
 	ACache mCache;
 	RoundedImageView iv_main_left_head;
-	TextView user_name;
 	RelativeLayout toprl;
-	ImageView login_tv;
-	LinearLayout animll_id;
-	private WeiboAuth mWeiboAuth;
-	private SsoHandler mSsoHandler;
-	private boolean isLogin = false;
-	// ��ʱ�������
-	private Timer mTimer;
-	private TimerTask mTimerTask;
-	protected static final int UPDATE_TEXT = 0;
-	private Handler mHandler;
 	File sdcardDir;
 	String path;
 	File f;
 	File[] fl;
-	
-	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		mCache = ACache.get(this);
+//		mCache = ACache.get(this);
 //		mDoubleClickExitHelper = new DoubleClickExitHelper(this);
-		toprl = (RelativeLayout) findViewById(R.id.toprl);
-		animll_id = (LinearLayout) findViewById(R.id.animll_id);
-		login_tv = (ImageView) findViewById(R.id.login_tv);
-		user_name = (TextView) findViewById(R.id.user_name);
+//		toprl = (RelativeLayout) findViewById(R.id.toprl);
+//		animll_id = (LinearLayout) findViewById(R.id.animll_id);
+//		login_tv = (ImageView) findViewById(R.id.login_tv);
+//		user_name = (TextView) findViewById(R.id.user_name);
 		iv_main_left_head = (RoundedImageView) findViewById(R.id.iv_main_left_head);
 
 
@@ -176,7 +160,7 @@ public class MainActivity extends FragmentActivity {
 		}
 	}
 	  /**
-     * ��ʾShortToast
+     * 显示ShortToast
      */
     public void showCustomToast(String pMsg, int view_position) {
 	 Crouton.makeText(this, pMsg, Style.CONFIRM, view_position).show();
@@ -196,11 +180,12 @@ public class MainActivity extends FragmentActivity {
 
 	private void init() {
 		fm = getSupportFragmentManager();
-		// ֻ����������Ҫ������Fragment�ʬF
+		// 只當容器，主要內容已Fragment呈現
 		initFragment(new EveryDayEnglishFragment());
 	}
 
-	// ��ʼ��Fragment(FragmentActivity�к���)
+
+	// 初始化Fragment(FragmentActivity中呼叫)
 	public void initFragment(Fragment f) {
 		changeFragment(f, true);
 	}
@@ -222,7 +207,6 @@ public class MainActivity extends FragmentActivity {
 	protected void onDestroy() {
 		// TODO Auto-generated method stub
 		super.onDestroy();
-		// OffersManager.getInstance(MainActivity.this).onAppExit();
 	}
 
 	@Override
@@ -246,13 +230,13 @@ public class MainActivity extends FragmentActivity {
 	public void createSDCardDir() {
 		if (Environment.MEDIA_MOUNTED.equals(Environment
 				.getExternalStorageState())) {
-			// ����һ���ļ��ж��󣬸�ֵΪ�ⲿ�洢����Ŀ¼
+			// 创建一个文件夹对象，赋值为外部存储器的目录
 			File sdcardDir = Environment.getExternalStorageDirectory();
-			// �õ�һ��·����������sdcard���ļ���·��������
+			// 得到一个路径，内容是sdcard的文件夹路径和名字
 			String path = sdcardDir.getPath() + "/zhidu";
 			File path1 = new File(path);
 			if (!path1.exists()) {
-				// �������ڣ�����Ŀ¼��������Ӧ��������ʱ�򴴽�
+				// 若不存在，创建目录，可以在应用启动的时候创建
 				path1.mkdirs();
 				System.out.println("paht ok,path:" + path);
 			}
@@ -262,6 +246,5 @@ public class MainActivity extends FragmentActivity {
 		}
 
 	}
-
 
 }

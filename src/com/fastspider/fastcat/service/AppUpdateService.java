@@ -95,7 +95,7 @@ public class AppUpdateService extends Service {
 		@Override
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
-				
+
 			case DOWNLOAD_COMPLETE:
 				// �����װPendingIntent
 				Uri uri = Uri.fromFile(updateFile);
@@ -162,7 +162,7 @@ public class AppUpdateService extends Service {
 							"��������", (int) totalSize * 100 / updateTotalSize
 									+ "%", updatePendingIntent);
 
-					
+
 					/***
 					 * �������������Զ���view����ʾNotification
 					 */
@@ -172,7 +172,7 @@ public class AppUpdateService extends Service {
 							R.id.notificationTitle, "��������");
 					updateNotification.contentView.setProgressBar(
 							R.id.notificationProgress, 100, downloadCount, false);
-					
+
 					updateNotificationManager.notify(0, updateNotification);
 				}
 			}
@@ -195,10 +195,10 @@ public class AppUpdateService extends Service {
 
 		public void run() {
 			message.what = DOWNLOAD_COMPLETE;
-			
-			
+
+
 			try {
-				// ����Ȩ��<USES-PERMISSION
+				// 增加权限<USES-PERMISSION
 				// android:name="android.permission.WRITE_EXTERNAL_STORAGE">;
 				if (!updateDir.exists()) {
 					updateDir.mkdirs();
@@ -206,21 +206,21 @@ public class AppUpdateService extends Service {
 				if (!updateFile.exists()) {
 					updateFile.createNewFile();
 				}
-				// ���غ�����QQΪ����
-				// ����Ȩ��<USES-PERMISSION
+				// 下载函数，以QQ为例子
+				// 增加权限<USES-PERMISSION
 				// android:name="android.permission.INTERNET">;
 				long downloadSize = downloadUpdateFile(
 						Conf.DOWNLOAD_APK,
-						
+
 						updateFile);
 				if (downloadSize > 0) {
-					// ���سɹ�
+					// 下载成功
 					updateHandler.sendMessage(message);
-				} 
+				}
 			} catch (Exception ex) {
 				ex.printStackTrace();
 				message.what = DOWNLOAD_FAIL;
-				// ����ʧ��
+				// 下载失败
 				updateHandler.sendMessage(message);
 			}
 		}
