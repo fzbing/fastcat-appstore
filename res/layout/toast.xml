@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res/com.youzi.zhidu"
+    xmlns:app="http://schemas.android.com/apk/res/com.fastspider.fastcat"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <com.youzi.zhidu.lib.CircleImageView
+    <com.fastspider.fastcat.lib.CircleImageView
         android:id="@+id/iv"
         style="@style/UserFaceImageStyle"
         android:layout_centerInParent="true"

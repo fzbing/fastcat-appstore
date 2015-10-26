@@ -72,7 +72,7 @@
             android:layout_height="match_parent"
             android:background="@drawable/success_circle" />
 
-        <com.youzi.zhidu.dialog.SuccessTickView
+        <com.fastspider.fastcat.dialog.SuccessTickView
             android:id="@+id/success_tick"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.youzi.zhidu"
+    package="com.fastspider.fastcat"
     android:versionCode="4"
     android:versionName="2.0" >
 
@@ -27,7 +27,7 @@
         android:theme="@style/AppTheme" >
         
           <activity
-         	android:name="com.youzi.zhidu.activity.SplashActivity"
+         	android:name="com.fastspider.fastcat.activity.SplashActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
             <intent-filter>
@@ -37,39 +37,39 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.youzi.zhidu.MainActivity"
+            android:name="com.fastspider.fastcat.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/TimeAppTheme" >
             
         </activity>
         <activity
-            android:name="com.youzi.zhidu.activity.ArticleContentActivity"
+            android:name="com.fastspider.fastcat.activity.ArticleContentActivity"
             android:theme="@style/ActionBarTheme" >
         </activity>
         <activity
-            android:name="com.youzi.zhidu.activity.BaseActivity"
+            android:name="com.fastspider.fastcat.activity.BaseActivity"
             android:theme="@style/ActionBarTheme" >
         </activity>
      
         <activity
-            android:name="com.youzi.zhidu.activity.SettingActivity"
+            android:name="com.fastspider.fastcat.activity.SettingActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" >
         </activity>
         <activity
-            android:name="com.youzi.zhidu.activity.FBActivity"
+            android:name="com.fastspider.fastcat.activity.FBActivity"
             android:screenOrientation="portrait"
             android:theme="@style/FBAppTheme" >
         </activity>
         <activity
-            android:name="com.youzi.zhidu.activity.FeedBackActivity"
+            android:name="com.fastspider.fastcat.activity.FeedBackActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
              android:theme="@style/FBAppTheme"
             android:windowSoftInputMode="adjustResize" >
         </activity>
-        <activity android:name="com.youzi.zhidu.activity.EnglishContentActivity" >
+        <activity android:name="com.fastspider.fastcat.activity.EnglishContentActivity" >
         </activity>
         <activity android:name="com.umeng.fb.ConversationActivity" />
 
@@ -82,7 +82,7 @@
             android:value="Umeng" >
         </meta-data>
 
-        <service android:name="com.youzi.zhidu.service.AppUpdateService" >
+        <service android:name="com.fastspider.fastcat.service.AppUpdateService" >
         </service>
     </application>
 
