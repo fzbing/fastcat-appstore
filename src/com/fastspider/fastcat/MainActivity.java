@@ -1,18 +1,28 @@
 package com.fastspider.fastcat;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.ActionBar;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.PendingIntent;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Environment;
@@ -33,12 +43,15 @@ import android.view.WindowManager;
 import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.fastspider.fastcat.downfile.DownProgress;
+import com.fastspider.fastcat.downfile.DownloadFileProgress;
 import com.google.gson.JsonObject;
 import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
@@ -68,177 +81,255 @@ import com.fastspider.fastcat.lib.weibo.User;
 import com.fastspider.fastcat.lib.weibo.UsersAPI;
 import com.fastspider.fastcat.service.AppUpdateService;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+
 public class MainActivity extends FragmentActivity {
-	private DoubleClickExitHelper mDoubleClickExitHelper;
-	private DrawerLayout mDrawerLayout;
-	private ListView mDrawerList;
-	RelativeLayout rl;
-	private ActionBarDrawerToggle mDrawerToggle;
-	private DrawerArrowDrawable drawerArrow;
-	public static FragmentManager fm;
-	Boolean openOrClose = false;
-	ACache mCache;
-	RoundedImageView iv_main_left_head;
-	RelativeLayout toprl;
-	File sdcardDir;
-	String path;
-	File f;
-	File[] fl;
-	
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+    private DoubleClickExitHelper mDoubleClickExitHelper;
+    private DrawerLayout mDrawerLayout;
+    private ListView mDrawerList;
+    RelativeLayout rl;
+    private ActionBarDrawerToggle mDrawerToggle;
+    private DrawerArrowDrawable drawerArrow;
+    public static FragmentManager fm;
+    Boolean openOrClose = false;
+    File sdcardDir;
+    String path;
+    File f;
+    File[] fl;
+    ProgressDialog m_progressDlg;
+    Handler m_mainHandler = new Handler();
 
-//		iv_main_left_head = (RoundedImageView) findViewById(R.id.iv_main_left_head);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        createSDCardDir();
 
-		createSDCardDir();
+        //左上角三角形按钮
+        ActionBar ab = getActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
+        ab.setHomeButtonEnabled(true);
 
-//		MobclickAgent.updateOnlineConfig(this);
+        init();
 
-		//左上角三角形按钮
-		ActionBar ab = getActionBar();
-		ab.setDisplayHomeAsUpEnabled(true);
-		ab.setHomeButtonEnabled(true);
+        fm = this.getSupportFragmentManager();
+        rl = (RelativeLayout) findViewById(R.id.rl);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerList = (ListView) findViewById(R.id.navdrawer);
 
-		init();
-		fm = this.getSupportFragmentManager();
-		rl = (RelativeLayout) findViewById(R.id.rl);
-		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-		mDrawerList = (ListView) findViewById(R.id.navdrawer);
+        drawerArrow = new DrawerArrowDrawable(this) {
+            @Override
+            public boolean isLayoutRtl() {
+                return false;
+            }
+        };
 
-		drawerArrow = new DrawerArrowDrawable(this) {
-			@Override
-			public boolean isLayoutRtl() {
-				return false;
-			}
-		};
-		mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
-				drawerArrow, R.string.drawer_open, R.string.drawer_close) {
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, drawerArrow, R.string.drawer_open, R.string.drawer_close) {
 
-			public void onDrawerClosed(View view) {
-				super.onDrawerClosed(view);
-				invalidateOptionsMenu();
-				openOrClose = false;
-			}
+            public void onDrawerClosed(View view) {
+                super.onDrawerClosed(view);
+                invalidateOptionsMenu();
+                openOrClose = false;
+            }
 
-			public void onDrawerOpened(View drawerView) {
-				super.onDrawerOpened(drawerView);
-				invalidateOptionsMenu();
-				openOrClose = true;
-			}
-		};
-		mDrawerLayout.setDrawerListener(mDrawerToggle);
-		mDrawerToggle.syncState();
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                invalidateOptionsMenu();
+                openOrClose = true;
+            }
+        };
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
+        mDrawerToggle.syncState();
 
-		clearCache();
-	}
-	@TargetApi(19)
+//
+        // todo 解决依赖
+        m_progressDlg = new ProgressDialog(MainActivity.this);
+        m_progressDlg.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+        // 设置ProgressDialog 的进度条是否不明确 false 就是不设置为不明确
+        m_progressDlg.setIndeterminate(false);
+        new VersionAsyncTask().execute();
+//
 
-	private void clearCache() {
-		sdcardDir = Environment.getExternalStorageDirectory();
-		path = sdcardDir.getPath() + "/zhidu";
-		f = new File(path);
-		fl = f.listFiles();
-		Log.e("fl.length==", fl.length + "");
-		if (fl.length == 0) {
+        clearCache();
+    }
 
-		} else {
 
-			for (int i = 0; i < fl.length; i++) {
-				if (fl[i].toString().endsWith(".mp3")
-						|| fl[i].toString().endsWith(".MP3")) {
-					fl[i].delete();
-				}
-			}
-		}
-	}
-	  /**
+    // 更新任务
+    private class VersionAsyncTask extends AsyncTask<Void, Void, Boolean> {
+
+        @Override
+        protected Boolean doInBackground(Void... params) {
+            // todo 版本检测
+            return true;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean result) {
+            if (result) {
+                // 更新新版本
+                String str = "发现新版本，是否更新？";
+                Dialog dialog = new AlertDialog.Builder(MainActivity.this).setTitle("软件更新").setMessage(str)
+                        .setPositiveButton("下载更新",
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        m_progressDlg.setTitle("正在下载");
+                                        m_progressDlg.setMessage("请稍候...");
+                                        m_progressDlg.show();
+                                        (new FileDown()).downFile("http://7xkfag.com1.z0.glb.clouddn.com/FastCat-v33.apk", Environment.getExternalStorageDirectory(), "aaa.apk");
+                                    }
+                                })
+                        .setNegativeButton("暂不更新",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int whichButton) {
+                                    }
+                                }).create();
+                dialog.show();
+            }
+            super.onPostExecute(result);
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+    }
+
+    private class FileDown extends DownloadFileProgress {
+
+        @Override
+        public void onStart(long length) {
+            // todo
+            m_progressDlg.setMax((int) length);
+        }
+
+        @Override
+        public void onUpdate(long count) {
+            m_progressDlg.setProgress((int) count);
+        }
+
+        @Override
+        public void onEnd() {
+            m_mainHandler.post(new Runnable() {
+                public void run() {
+                    m_progressDlg.cancel();
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setDataAndType(Uri.fromFile(new File(Environment.getExternalStorageDirectory(), "aaa.apk")),
+                            "application/vnd.android.package-archive");
+                    startActivity(intent);
+                }
+            });
+
+        }
+    }
+
+
+    @TargetApi(19)
+    private void clearCache() {
+        sdcardDir = Environment.getExternalStorageDirectory();
+        path = sdcardDir.getPath() + "/zhidu";
+        f = new File(path);
+        fl = f.listFiles();
+        Log.e("fl.length==", fl.length + "");
+        if (fl.length == 0) {
+
+        } else {
+
+            for (int i = 0; i < fl.length; i++) {
+                if (fl[i].toString().endsWith(".mp3")
+                        || fl[i].toString().endsWith(".MP3")) {
+                    fl[i].delete();
+                }
+            }
+        }
+    }
+
+    /**
      * 显示ShortToast
      */
     public void showCustomToast(String pMsg, int view_position) {
-	 Crouton.makeText(this, pMsg, Style.CONFIRM, view_position).show();
+        Crouton.makeText(this, pMsg, Style.CONFIRM, view_position).show();
     }
 
-	@Override
-	protected void onPostCreate(Bundle savedInstanceState) {
-		super.onPostCreate(savedInstanceState);
-		mDrawerToggle.syncState();
-	}
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        mDrawerToggle.syncState();
+    }
 
-	@Override
-	public void onConfigurationChanged(Configuration newConfig) {
-		super.onConfigurationChanged(newConfig);
-		mDrawerToggle.onConfigurationChanged(newConfig);
-	}
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        mDrawerToggle.onConfigurationChanged(newConfig);
+    }
 
-	private void init() {
-		fm = getSupportFragmentManager();
-		// 只當容器，主要內容已Fragment呈現
-		initFragment(new EveryDayEnglishFragment());
-	}
+    private void init() {
+        fm = getSupportFragmentManager();
+        // 只當容器，主要內容已Fragment呈現
+        initFragment(new EveryDayEnglishFragment());
+    }
 
+    // 初始化Fragment(FragmentActivity中呼叫)
+    public void initFragment(Fragment f) {
+        changeFragment(f, true);
+    }
 
-	// 初始化Fragment(FragmentActivity中呼叫)
-	public void initFragment(Fragment f) {
-		changeFragment(f, true);
-	}
+    private void changeFragment(Fragment f, boolean init) {
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.fragment_layout, f);
+        if (!init)
+            ft.addToBackStack(null);
+        ft.commitAllowingStateLoss();
+    }
 
-	private void changeFragment(Fragment f, boolean init) {
-		FragmentTransaction ft = fm.beginTransaction().setCustomAnimations(
-				R.anim.umeng_fb_slide_in_from_left,
-				R.anim.umeng_fb_slide_out_from_left,
-				R.anim.umeng_fb_slide_in_from_right,
-				R.anim.umeng_fb_slide_out_from_right);
-		;
-		ft.replace(R.id.fragment_layout, f);
-		if (!init)
-			ft.addToBackStack(null);
-		ft.commitAllowingStateLoss();
-	}
+    @Override
+    protected void onDestroy() {
+        // TODO Auto-generated method stub
+        super.onDestroy();
+    }
 
-	@Override
-	protected void onDestroy() {
-		// TODO Auto-generated method stub
-		super.onDestroy();
-	}
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK
+                && event.getAction() == KeyEvent.ACTION_DOWN) {
 
-	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if (keyCode == KeyEvent.KEYCODE_BACK
-				&& event.getAction() == KeyEvent.ACTION_DOWN) {
+            if (openOrClose == false) {
+                showCustomToast(getString(R.string.back_exit_tips),
+                        R.id.fragment_layout);
+                return mDoubleClickExitHelper.onKeyDown(keyCode, event);
+            } else {
+                mDrawerLayout.closeDrawers();
+            }
 
-			if (openOrClose == false) {
-				showCustomToast(getString(R.string.back_exit_tips),
-						R.id.fragment_layout);
-				return mDoubleClickExitHelper.onKeyDown(keyCode, event);
-			} else {
-				mDrawerLayout.closeDrawers();
-			}
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 
-			return true;
-		}
-		return super.onKeyDown(keyCode, event);
-	}
+    public void createSDCardDir() {
+        if (Environment.MEDIA_MOUNTED.equals(Environment
+                .getExternalStorageState())) {
+            // 创建一个文件夹对象，赋值为外部存储器的目录
+            File sdcardDir = Environment.getExternalStorageDirectory();
+            // 得到一个路径，内容是sdcard的文件夹路径和名字
+            String path = sdcardDir.getPath() + "/zhidu";
+            File path1 = new File(path);
+            if (!path1.exists()) {
+                // 若不存在，创建目录，可以在应用启动的时候创建
+                path1.mkdirs();
+                System.out.println("path ok,path:" + path);
+            }
+        } else {
+            System.out.println("false");
+            return;
+        }
+    }
 
-	public void createSDCardDir() {
-		if (Environment.MEDIA_MOUNTED.equals(Environment
-				.getExternalStorageState())) {
-			// 创建一个文件夹对象，赋值为外部存储器的目录
-			File sdcardDir = Environment.getExternalStorageDirectory();
-			// 得到一个路径，内容是sdcard的文件夹路径和名字
-			String path = sdcardDir.getPath() + "/zhidu";
-			File path1 = new File(path);
-			if (!path1.exists()) {
-				// 若不存在，创建目录，可以在应用启动的时候创建
-				path1.mkdirs();
-				System.out.println("paht ok,path:" + path);
-			}
-		} else {
-			System.out.println("false");
-			return;
-		}
-
-	}
-
+    private String getVersionName() throws Exception {
+        PackageManager packageManager = getPackageManager();
+        PackageInfo packInfo = packageManager.getPackageInfo(getPackageName(), 0);
+        return packInfo.versionName;
+    }
 }

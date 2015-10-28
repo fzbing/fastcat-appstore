@@ -5,35 +5,173 @@
       <config />
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="9adb0a7e-b83a-483c-982b-3a8825844795" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/Zhidu.apk" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dexedLibs/activation-83353ef9b68aedb2c7a6f7d042224545.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dexedLibs/additionnal-e5b9819542a15422e3054d8205a9a5a6.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dexedLibs/afinal_customer-137a6e710d3b6d412e290829cabe51d6.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dexedLibs/android-support-v4-946509d675f20a39d50d0b0de2cd2866.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dexedLibs/androidasync-1.2.1-27a92bf3532eac240f65bb220381c76c.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dexedLibs/db4o-8.1.302.16154-core-java5-1162cca01330042ead2ff46723d7210b.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dexedLibs/gson-2.2.4-c62b5c9e262c858eb914baa7f796cebe.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dexedLibs/httpmime-4.1.3-dc6961b0a858beb63e938cf602f9b113.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dexedLibs/ion-1.2.1-a8749109891c7d1cbeb121621952bcec.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dexedLibs/jsoup-1.8.1-144168a7354a340b0a54dc05e8ca6896.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dexedLibs/mail-7c4158e9ec36e23f647b6a7eab002009.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dexedLibs/nine-old-androids-2.4.0-ce0f886935aa87d78da9052759ed848a.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dexedLibs/umeng-analytics-v5.2.4-8c5c321e9b939ccde3f128c3c0fb0a84.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dexedLibs/weibosdkcore-18675152742b0c3403bc799faf417f90.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dexedLibs/xUtils-2.4.4-23718fd4dc71c3222a7714078792f33e.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jarlist.cache" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/com/youzi/zhidu/BuildConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/com/youzi/zhidu/R.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes.dex" afterPath="$PROJECT_DIR$/bin/classes.dex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/globle_player_bg.9.png" afterPath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/globle_player_bg.9.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/globle_player_progress_trough.9.png" afterPath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/globle_player_progress_trough.9.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/item_bg.9.png" afterPath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/item_bg.9.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/item_bg_border_cyan.9.png" afterPath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/item_bg_border_cyan.9.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/logo_pro_logo_sina_dis.png" afterPath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/logo_pro_logo_sina_dis.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/resources.ap_" afterPath="$PROJECT_DIR$/bin/resources.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/sb.9.png" afterPath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/sb.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/fastspider/fastcat/Common.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/fastspider/fastcat/downfile/DownProgress.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/fastspider/fastcat/downfile/DownloadFileProgress.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/fastspider/fastcat/FcHttp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/dialog_fragment.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/ACache$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/ACache$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/ACache$ACacheManager$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/ACache$ACacheManager$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/ACache$ACacheManager.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/ACache$ACacheManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/ACache$Utils.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/ACache$Utils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/ACache$xFileOutputStream.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/ACache$xFileOutputStream.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/ACache.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/ACache.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/commont/APIURL.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/commont/APIURL.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/weibo/AbsOpenAPI.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/weibo/AbsOpenAPI.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/ActionBarDrawerToggle.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/ActionBarDrawerToggle.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/AppTuiFragment$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/AppTuiFragment$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/AppTuiFragment.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/AppTuiFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/service/AppUpdateService$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/service/AppUpdateService$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/service/AppUpdateService$updateRunnable.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/service/AppUpdateService$updateRunnable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/service/AppUpdateService.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/service/AppUpdateService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/bean/Article.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/bean/Article.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/adapter/ArticleAdapter$ViewHolder.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/adapter/ArticleAdapter$ViewHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/adapter/ArticleAdapter.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/adapter/ArticleAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/activity/ArticleContentActivity.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/activity/ArticleContentActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/BitmapManager$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/BitmapManager$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/BitmapManager.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/BitmapManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/BuildConfig.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/BuildConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/CircleImageView.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/CircleImageView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/CircleProgressBar.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/CircleProgressBar.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/Conf.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/Conf.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/toast/Configuration$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/toast/Configuration$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/toast/Configuration$Builder.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/toast/Configuration$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/toast/Configuration.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/toast/Configuration.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/toast/Crouton.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/toast/Crouton.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/DataUtils.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/DataUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/db/Db$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/db/Db$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/db/Db$2.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/db/Db$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/db/Db$Callback.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/db/Db$Callback.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/db/Db$Kv.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/db/Db$Kv.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/db/Db.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/db/Db.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/toast/DefaultAnimationsBuilder.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/toast/DefaultAnimationsBuilder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/commont/DoubleClickExitHelper$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/commont/DoubleClickExitHelper$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/commont/DoubleClickExitHelper.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/commont/DoubleClickExitHelper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/DrawerArrowDrawable.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/DrawerArrowDrawable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/feedback/EmailSender.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/feedback/EmailSender.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/bean/EveryDayEnglish.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/bean/EveryDayEnglish.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/EveryDayEnglishFragment$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/EveryDayEnglishFragment$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/EveryDayEnglishFragment$2.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/EveryDayEnglishFragment$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/EveryDayEnglishFragment$3.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/EveryDayEnglishFragment$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/EveryDayEnglishFragment$4.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/EveryDayEnglishFragment$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/EveryDayEnglishFragment$5.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/EveryDayEnglishFragment$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/EveryDayEnglishFragment$6.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/EveryDayEnglishFragment$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/EveryDayEnglishFragment.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/EveryDayEnglishFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/activity/FeedBackActivity$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/activity/FeedBackActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/activity/FeedBackActivity.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/activity/FeedBackActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/FileUtils$PathStatus.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/FileUtils$PathStatus.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/FileUtils.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/FileUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/FlipLayout$FlipAnimator.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/FlipLayout$FlipAnimator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/FlipLayout$OnFlipListener.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/FlipLayout$OnFlipListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/FlipLayout.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/FlipLayout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/FloatingActionButton$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/FloatingActionButton$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/FloatingActionButton$SavedState$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/FloatingActionButton$SavedState$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/FloatingActionButton$SavedState.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/FloatingActionButton$SavedState.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/FloatingActionButton$ScrollSettleHandler.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/FloatingActionButton$ScrollSettleHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/FloatingActionButton.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/FloatingActionButton.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/weibo/Geo.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/weibo/Geo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/adapter/HomeAdapter$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/adapter/HomeAdapter$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/adapter/HomeAdapter$2.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/adapter/HomeAdapter$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/adapter/HomeAdapter$3.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/adapter/HomeAdapter$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/adapter/HomeAdapter$ViewHolder.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/adapter/HomeAdapter$ViewHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/adapter/HomeAdapter.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/adapter/HomeAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/bean/HomeBean.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/bean/HomeBean.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/HomeFragment$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/HomeFragment$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/HomeFragment$2$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/HomeFragment$2$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/HomeFragment$2.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/HomeFragment$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/HomeFragment$3.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/HomeFragment$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/HomeFragment.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/HomeFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/ImageUtils.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/ImageUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/toast/LifecycleCallback.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/toast/LifecycleCallback.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/MainActivity$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/MainActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/MainActivity$2.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/MainActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/MainActivity.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/MainActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/toast/Manager$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/toast/Manager$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/toast/Manager$Messages.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/toast/Manager$Messages.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/toast/Manager.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/toast/Manager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/MethodsCompat.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/MethodsCompat.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/NetWorkUtil.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/NetWorkUtil.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/dialog/OptAnimationLoader.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/dialog/OptAnimationLoader.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/OtherFragment$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/OtherFragment$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/OtherFragment$2.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/OtherFragment$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/OtherFragment$3$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/OtherFragment$3$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/OtherFragment$3.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/OtherFragment$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/OtherFragment$4.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/OtherFragment$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/OtherFragment.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/fragment/OtherFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/R$anim.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/R$anim.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/R$attr.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/R$attr.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/R$color.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/R$color.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/R$dimen.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/R$dimen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/R$drawable.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/R$drawable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/R$id.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/R$layout.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/R$menu.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/R$menu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/R$string.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/R$style.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/R$style.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/R$styleable.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/R$styleable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/R.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/R.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/dialog/Rotate3dAnimation$Description.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/dialog/Rotate3dAnimation$Description.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/dialog/Rotate3dAnimation.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/dialog/Rotate3dAnimation.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/RoundImageView.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/RoundImageView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/RoundProgressBar.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/RoundProgressBar.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/RoundedDrawable$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/RoundedDrawable$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/RoundedDrawable.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/RoundedDrawable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/RoundedImageView$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/RoundedImageView$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/RoundedImageView.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/RoundedImageView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/activity/SettingActivity$1$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/activity/SettingActivity$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/activity/SettingActivity$1$2.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/activity/SettingActivity$1$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/activity/SettingActivity$1$3.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/activity/SettingActivity$1$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/activity/SettingActivity$1$4.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/activity/SettingActivity$1$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/activity/SettingActivity$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/activity/SettingActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/activity/SettingActivity.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/activity/SettingActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/adapter/SettingAdapter$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/adapter/SettingAdapter$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/adapter/SettingAdapter$ViewHolder.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/adapter/SettingAdapter$ViewHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/adapter/SettingAdapter.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/adapter/SettingAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/activity/SplashActivity$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/activity/SplashActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/activity/SplashActivity$2.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/activity/SplashActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/SplashActivity.apk" afterPath="$PROJECT_DIR$/bin/classes/SplashActivity.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/activity/SplashActivity.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/activity/SplashActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/SplashActivity.unaligned.apk" afterPath="$PROJECT_DIR$/bin/classes/SplashActivity.unaligned.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/weibo/Status.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/weibo/Status.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/StringUtil.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/StringUtil.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/StringUtils$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/StringUtils$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/StringUtils$2.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/StringUtils$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/StringUtils.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/cache/StringUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/toast/Style$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/toast/Style$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/toast/Style$Builder.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/toast/Style$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/toast/Style.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/toast/Style.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/dialog/SuccessTickView$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/dialog/SuccessTickView$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/dialog/SuccessTickView.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/dialog/SuccessTickView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/dialog/SweetAlertDialog$1$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/dialog/SweetAlertDialog$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/dialog/SweetAlertDialog$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/dialog/SweetAlertDialog$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/dialog/SweetAlertDialog$2.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/dialog/SweetAlertDialog$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/dialog/SweetAlertDialog$OnSweetClickListener.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/dialog/SweetAlertDialog$OnSweetClickListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/dialog/SweetAlertDialog.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/dialog/SweetAlertDialog.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/barcolor/SystemBarTintManager$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/barcolor/SystemBarTintManager$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/barcolor/SystemBarTintManager$SystemBarConfig.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/barcolor/SystemBarTintManager$SystemBarConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/barcolor/SystemBarTintManager.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/barcolor/SystemBarTintManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/bean/Test.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/bean/Test.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/TimerUtils$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/TimerUtils$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/TimerUtils.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/TimerUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/adapter/TuiAdapter$ViewHolder.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/adapter/TuiAdapter$ViewHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/adapter/TuiAdapter.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/adapter/TuiAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/weibo/User.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/weibo/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/weibo/UsersAPI.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/weibo/UsersAPI.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/bean/VersionCode.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/bean/VersionCode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/weibo/Visible.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/lib/weibo/Visible.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/ZhiduApplication.class" afterPath="$PROJECT_DIR$/bin/classes/com/fastspider/fastcat/ZhiduApplication.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/fastspider/fastcat/cache/ACache.java" afterPath="$PROJECT_DIR$/src/com/fastspider/fastcat/cache/ACache.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/fastspider/fastcat/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/fastspider/fastcat/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/fastspider/fastcat/activity/SplashActivity.java" afterPath="$PROJECT_DIR$/src/com/fastspider/fastcat/activity/SplashActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Zhidu-Android.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,37 +192,67 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FloatingActionButton.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/youzi/zhidu/lib/FloatingActionButton.java">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/fastspider/fastcat/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-              <folding />
+              <caret line="180" column="120" selection-start-line="180" selection-start-column="67" selection-end-line="180" selection-end-column="120" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4553#4554#0" expanded="true" />
+                <element signature="e#4597#4598#0" expanded="true" />
+                <element signature="e#4695#4715#0" expanded="true" />
+                <element signature="e#4717#4738#0" expanded="true" />
+                <element signature="class#4639:5140" expanded="false" />
+                <element signature="e#7255#7256#0" expanded="true" />
+                <element signature="e#7299#7300#0" expanded="true" />
+                <element signature="e#7566#7567#0" expanded="true" />
+                <element signature="e#7628#7629#0" expanded="true" />
+                <element signature="method#showCustomToast#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#init#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#onDestroy#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#onKeyDown#0;class#MainActivity#0" expanded="false" />
+                <element signature="e#10195#10229#0" expanded="true" />
+                <element signature="method#getVersionName#0;class#MainActivity#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SplashActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/youzi/zhidu/activity/SplashActivity.java">
+      <file leaf-file-name="DownloadFileProgress.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/fastspider/fastcat/downfile/DownloadFileProgress.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-              <folding />
+              <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SystemBarTintManager.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/youzi/zhidu/barcolor/SystemBarTintManager.java">
+      <file leaf-file-name="Common.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/fastspider/fastcat/Common.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25925925">
-              <caret line="535" column="0" selection-start-line="535" selection-start-column="0" selection-end-line="535" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.5368782">
+              <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="layoutResourceFile_vertical" />
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -97,6 +265,27 @@
       </map>
     </option>
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/com/fastspider/fastcat/cache/ACache.java" />
+        <option value="$PROJECT_DIR$/src/com/fastspider/fastcat/activity/SplashActivity.java" />
+        <option value="$PROJECT_DIR$/res/layout/dialog_fragment.xml" />
+        <option value="$PROJECT_DIR$/src/com/fastspider/fastcat/AppVersion.java" />
+        <option value="$PROJECT_DIR$/src/com/fastspider/fastcat/DownloadFile.java" />
+        <option value="$PROJECT_DIR$/src/com/fastspider/fastcat/FcHttp.java" />
+        <option value="$PROJECT_DIR$/src/DownloadFileProgress.java" />
+        <option value="$PROJECT_DIR$/src/com/fastspider/fastcat/ZhiduApplication.java" />
+        <option value="$PROJECT_DIR$/src/com/fastspider/fastcat/DownloadFileProgress.java" />
+        <option value="$PROJECT_DIR$/src/com/fastspider/fastcat/DownProgress.java" />
+        <option value="$PROJECT_DIR$/src/com/fastspider/fastcat/downfile/DownProgress.java" />
+        <option value="$PROJECT_DIR$/src/com/fastspider/fastcat/downfile/DownloadFileProgress.java" />
+        <option value="$PROJECT_DIR$/src/com/fastspider/fastcat/MainActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/fastspider/fastcat/Common.java" />
+      </list>
+    </option>
+  </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
   </component>
@@ -104,9 +293,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="873" />
+    <option name="x" value="-3" />
+    <option name="y" value="-9" />
+    <option name="width" value="1372" />
+    <option name="height" value="783" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -133,6 +323,83 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Zhidu-Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Zhidu-Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FastCatAndroidForPlatform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Zhidu-Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FastCatAndroidForPlatform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fastcat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Zhidu-Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FastCatAndroidForPlatform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fastcat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="downfile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Zhidu-Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FastCatAndroidForPlatform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -155,113 +422,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Zhidu-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Zhidu-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Zhidu-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Zhidu-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Zhidu-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhidu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Zhidu-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Zhidu-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhidu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="barcolor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Zhidu-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Zhidu-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhidu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adapter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Zhidu-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Zhidu-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhidu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="activity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -275,7 +435,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/xUtils-2.4.4.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -283,11 +443,21 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
   </component>
-  <component name="RunManager" selected="Android Application.Unnamed">
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.fastspider.fastcat" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Android Application.usb">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
@@ -302,11 +472,17 @@
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SELECTED_MATRIX_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_PROJECT_ID" value="" />
-      <option name="IS_VALID_CLOUD_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_SELECTION_ERROR" value="" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
+      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
+      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
+      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
       <method />
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -327,11 +503,17 @@
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SELECTED_MATRIX_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_PROJECT_ID" value="" />
-      <option name="IS_VALID_CLOUD_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_SELECTION_ERROR" value="" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
+      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
+      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
+      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -427,9 +609,10 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="false" name="Unnamed" type="AndroidRunConfigurationType" factoryName="Android Application">
+    <configuration default="false" name="FastCatForAndroid" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="SplashActivity" />
       <option name="ACTIVITY_CLASS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
@@ -444,17 +627,55 @@
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SELECTED_MATRIX_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_PROJECT_ID" value="" />
-      <option name="IS_VALID_CLOUD_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_SELECTION_ERROR" value="" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="Please select a project..." />
+      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="Please select a project..." />
+      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="Cloud configuration not specified" />
+      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="Cloud configuration not specified" />
+      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
       <RunnerSettings RunnerId="AndroidDebugRunner" />
       <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
       <method />
     </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Android Application.Unnamed" />
+    <configuration default="false" name="usb" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="SplashActivity" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="USB_DEVICE" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="Please select a project..." />
+      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="Please select a project..." />
+      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="Cloud configuration not specified" />
+      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="Cloud configuration not specified" />
+      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
+      <method />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Android Application.FastCatForAndroid" />
+      <item index="1" class="java.lang.String" itemvalue="Android Application.usb" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -476,39 +697,42 @@
     <option name="totallyTimeSpent" value="166000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="873" extended-state="6" />
+    <frame x="-3" y="-9" width="1372" height="783" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297568" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25365853" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26139817" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22340426" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32980132" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -533,18 +757,35 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/youzi/zhidu/lib/FloatingActionButton.java">
+    <entry file="file://$PROJECT_DIR$/src/com/fastspider/fastcat/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4553#4554#0" expanded="true" />
+            <element signature="e#4597#4598#0" expanded="true" />
+            <element signature="e#4695#4715#0" expanded="true" />
+            <element signature="e#4717#4738#0" expanded="true" />
+            <element signature="class#4639:5140" expanded="false" />
+            <element signature="e#7255#7256#0" expanded="true" />
+            <element signature="e#7299#7300#0" expanded="true" />
+            <element signature="e#7566#7567#0" expanded="true" />
+            <element signature="e#7628#7629#0" expanded="true" />
+            <element signature="method#showCustomToast#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#init#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onKeyDown#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#10195#10229#0" expanded="true" />
+            <element signature="method#getVersionName#0;class#MainActivity#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/youzi/zhidu/activity/SplashActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/com/fastspider/fastcat/Common.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
           <folding />
         </state>
       </provider>
@@ -552,47 +793,259 @@
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="35" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/youzi/zhidu/activity/ArticleContentActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22633745">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/youzi/zhidu/Conf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20576131">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/youzi/zhidu/lib/FloatingActionButton.java">
+    <entry file="file://$PROJECT_DIR$/res/layout/dialog_fragment.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+          <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/youzi/zhidu/activity/SplashActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/com/fastspider/fastcat/activity/SplashActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <caret line="47" column="85" selection-start-line="47" selection-start-column="82" selection-end-line="47" selection-end-column="85" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fastspider/fastcat/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4553#4554#0" expanded="true" />
+            <element signature="e#4597#4598#0" expanded="true" />
+            <element signature="e#4695#4715#0" expanded="true" />
+            <element signature="e#4717#4738#0" expanded="true" />
+            <element signature="class#4639:5140" expanded="false" />
+            <element signature="e#7255#7256#0" expanded="true" />
+            <element signature="e#7299#7300#0" expanded="true" />
+            <element signature="e#7566#7567#0" expanded="true" />
+            <element signature="e#7628#7629#0" expanded="true" />
+            <element signature="method#showCustomToast#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#init#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onKeyDown#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#10195#10229#0" expanded="true" />
+            <element signature="method#getVersionName#0;class#MainActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/ShareSDK.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9382504">
+          <caret line="77" column="14" selection-start-line="77" selection-start-column="14" selection-end-line="77" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.7419355">
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/youzi/zhidu/barcolor/SystemBarTintManager.java">
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25925925">
-          <caret line="535" column="0" selection-start-line="535" selection-start-column="0" selection-end-line="535" selection-end-column="0" />
+        <state vertical-scroll-proportion="-1.0909091">
+          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
           <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/androidasync-1.2.1.jar!/com/koushikdutta/async/future/FutureCallback.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13043478">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fastspider/fastcat/fragment/EveryDayEnglishFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/d/android-sdk-linux/sources/android-19/android/app/Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24013722">
+          <caret line="4199" column="21" selection-start-line="4199" selection-start-column="7" selection-end-line="4199" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fastspider/fastcat/cache/ACache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="97" column="51" selection-start-line="97" selection-start-column="51" selection-end-line="97" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/anim/umeng_fb_slide_in_from_left.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/d/android-sdk-linux/sources/android-19/android/view/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18579" column="21" selection-start-line="18579" selection-start-column="21" selection-end-line="18579" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fastspider/fastcat/activity/SplashActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="85" selection-start-line="47" selection-start-column="82" selection-end-line="47" selection-end-column="85" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/dialog_fragment.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fastspider/fastcat/dialog/SweetAlertDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37049744">
+          <caret line="77" column="13" selection-start-line="77" selection-start-column="12" selection-end-line="77" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/d/android-sdk-linux/sources/android-19/android/app/AlertDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22469983">
+          <caret line="562" column="23" selection-start-line="562" selection-start-column="23" selection-end-line="562" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/d/android-sdk-linux/platforms/android-19/android.jar!/org/apache/http/client/methods/HttpEntityEnclosingRequestBase.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.387097">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/d/android-sdk-linux/sources/android-19/java/net/URL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3327616">
+          <caret line="477" column="25" selection-start-line="477" selection-start-column="25" selection-end-line="477" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fastspider/fastcat/FcHttp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58354753">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.030874785">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fastspider/fastcat/ZhiduApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7838765">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fastspider/fastcat/downfile/DownProgress.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/d/android-sdk-linux/sources/android-19/android/os/Environment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36363637">
+          <caret line="383" column="30" selection-start-line="383" selection-start-column="30" selection-end-line="383" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fastspider/fastcat/downfile/DownloadFileProgress.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fastspider/fastcat/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="180" column="120" selection-start-line="180" selection-start-column="67" selection-end-line="180" selection-end-column="120" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4553#4554#0" expanded="true" />
+            <element signature="e#4597#4598#0" expanded="true" />
+            <element signature="e#4695#4715#0" expanded="true" />
+            <element signature="e#4717#4738#0" expanded="true" />
+            <element signature="class#4639:5140" expanded="false" />
+            <element signature="e#7255#7256#0" expanded="true" />
+            <element signature="e#7299#7300#0" expanded="true" />
+            <element signature="e#7566#7567#0" expanded="true" />
+            <element signature="e#7628#7629#0" expanded="true" />
+            <element signature="method#showCustomToast#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#init#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onKeyDown#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#10195#10229#0" expanded="true" />
+            <element signature="method#getVersionName#0;class#MainActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fastspider/fastcat/Common.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5368782">
+          <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
