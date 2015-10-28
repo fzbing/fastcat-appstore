@@ -210,6 +210,7 @@ public class MainActivity extends FragmentActivity {
         }
     }
 
+    // TODO: 15-10-28 下载的默认地址 名称
     private class FileDown extends DownloadFileProgress {
 
         // TODO: 15-10-28 依赖 m_progressDlg
