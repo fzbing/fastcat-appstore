@@ -84,6 +84,8 @@ import com.fastspider.fastcat.service.AppUpdateService;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class MainActivity extends FragmentActivity {
     private DoubleClickExitHelper mDoubleClickExitHelper;
@@ -155,14 +157,30 @@ public class MainActivity extends FragmentActivity {
         clearCache();
     }
 
-
     // 更新任务
     private class VersionAsyncTask extends AsyncTask<Void, Void, Boolean> {
 
+        private String downlink;
+
         @Override
         protected Boolean doInBackground(Void... params) {
-            // todo 版本检测
-            return true;
+            // todo 依赖
+            List<NameValuePair> vps = new ArrayList<NameValuePair>();
+            vps.add(new BasicNameValuePair("action", "checkNewestVersion"));
+            try {
+                JSONObject json = Common.postServer(vps);
+                // todo 依赖
+                if (Integer.parseInt(json.get("version").toString()) != Common.getVerCode(MainActivity.this)) {
+                    downlink = json.get("downlink").toString();
+                    return true;
+                }
+            } catch (JSONException e) {
+                Log.e("json", e.getMessage());
+            } catch (Exception e) {
+                // TODO: 15-10-28  java.lang.NullPointerException: println needs a message
+                Log.e("json", e.getMessage());
+            }
+            return false;
         }
 
         @Override
@@ -178,7 +196,7 @@ public class MainActivity extends FragmentActivity {
                                         m_progressDlg.setTitle("正在下载");
                                         m_progressDlg.setMessage("请稍候...");
                                         m_progressDlg.show();
-                                        (new FileDown()).downFile("http://7xkfag.com1.z0.glb.clouddn.com/FastCat-v33.apk", Environment.getExternalStorageDirectory(), "aaa.apk");
+                                        (new FileDown()).downFile(downlink, Environment.getExternalStorageDirectory(), "aaa.apk");
                                     }
                                 })
                         .setNegativeButton("暂不更新",
@@ -190,14 +208,11 @@ public class MainActivity extends FragmentActivity {
             }
             super.onPostExecute(result);
         }
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
     }
 
     private class FileDown extends DownloadFileProgress {
+
+        // TODO: 15-10-28 依赖 m_progressDlg
 
         @Override
         public void onStart(long length) {
@@ -221,7 +236,6 @@ public class MainActivity extends FragmentActivity {
                     startActivity(intent);
                 }
             });
-
         }
     }
 
@@ -236,7 +250,6 @@ public class MainActivity extends FragmentActivity {
         if (fl.length == 0) {
 
         } else {
-
             for (int i = 0; i < fl.length; i++) {
                 if (fl[i].toString().endsWith(".mp3")
                         || fl[i].toString().endsWith(".MP3")) {

@@ -10,8 +10,8 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.protocol.HTTP;
-import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -19,9 +19,10 @@ import java.util.List;
 
 public class Common {
 
-    public static final String SERVER_ADDRESS = "http://127.0.0.1:9000/";
+    // TODO: 15-10-28 配置请求地址
+    public static final String SERVER_ADDRESS = "http://10.1.0.16:9000/";
 
-    public static StringBuilder postServer(List<NameValuePair> vps) {
+    public static JSONObject postServer(List<NameValuePair> vps) {
 
         DefaultHttpClient httpclient = new DefaultHttpClient();
         try {
@@ -39,20 +40,11 @@ public class Common {
                 }
             }
             try {
-
-                JSONArray jsonArray = new JSONArray(builder.toString());
-                if (jsonArray.length() > 0) {
-//                    m_newVerName = jsonArray.getJSONObject(0).getString("verName");
-//                    m_newVerCode = jsonArray.getJSONObject(0).getLong("verCode");
-
-                }
-            }catch (JSONException e){
-                //
+                return new JSONObject(builder.toString());
+            } catch (JSONException e) {
+                // TODO: 15-10-28
             }
-
-            return builder;
         } catch (Exception e) {
-            Log.e("msg", e.getMessage());
             return null;
         } finally {
             try {
@@ -62,6 +54,7 @@ public class Common {
                 Log.e("msg", e.getMessage());
             }
         }
+        return new JSONObject();
     }
 
     public static int getVerCode(Context context) {
